@@ -1,0 +1,51 @@
+div.scroller { 
+	width: 635px; 
+	height: 400px;
+	overflow: hidden;
+	border-top:1px solid #333;
+}
+
+div.scroller div.section {
+	width:635px;
+	height:400px;
+	overflow:hidden;
+	float:left;
+	padding:1em;		
+}
+
+div.scroller div.content {
+	width: 10000px;
+}
+
+div#section2 {
+	background:#666;
+	color:#fff;
+}
+
+.controls a {
+	line-height: 27px;
+	padding-left: 18px;
+	margin-right: 15px;
+}
+
+#account_settings_menu {
+	background: url(../img/user.png) no-repeat left center;
+}
+
+#invoice_settings_menu {
+	background: url(../img/unaltered_table.png) no-repeat left center;
+}
+
+#advanced_settings_menu {
+	background: url(../img/cog.png) no-repeat left center;
+}
+
+#settings_sections input {
+	width: 415px;
+}
+
+.logo_holder {
+	text-align: center;
+	border-bottom: 1px solid #333;
+	margin-bottom: 15px;
+}

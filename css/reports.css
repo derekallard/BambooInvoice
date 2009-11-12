@@ -1,0 +1,24 @@
+/**
+* Report Info
+*/
+#report_shortlinks a {
+	line-height: 16px;
+	background: url(../img/calendar.png) no-repeat left;
+	padding-left: 20px;
+}
+
+fieldset {
+
+	position: absolute;
+	z-index: 999;
+	margin-left: 525px;
+	margin-top: 20px;
+	width: 150px;
+}
+
+fieldset ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}

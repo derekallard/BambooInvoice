@@ -1,0 +1,84 @@
+#logout_list {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+#logout_list li {
+	float: left;
+	margin-right: 10px;
+	line-height: 25px;
+	background: url(../img/lb_link_lt.png) no-repeat left;
+}
+
+.button {
+	width: 150px;
+	margin-right: 10px;
+	line-height: 25px;
+	background: url(../img/lb_link_lt.png) no-repeat left;
+	text-align: center;
+}
+
+#logout_list li a, .button a {
+	display: block;
+	background: url(../img/lb_link_rt.png) no-repeat right;
+	margin: 0;
+	padding: 0 10px;
+	text-decoration: none;
+	color: #FFF!important;
+	font-size: small;
+	font-weight: bold;
+}
+.button a:hover {
+	color: #F7E47D!important;
+}
+#lightbox{
+	display:none;
+	position: absolute;
+	top:50%;
+	left:50%;
+	z-index:9999;
+	width:500px;
+	height:400px;
+	margin:-220px 0 0 -250px;
+	text-align:left;
+	padding: 35px;
+	background: #FFF url(../img/bamboo_stalks_isolated.png) no-repeat right bottom;
+}
+#lightbox[id]{
+	position:fixed;
+}
+
+#overlay{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:5000;
+	background-color:#000;
+	-moz-opacity: 0.7;
+	opacity:.70;
+	filter: alpha(opacity=70);
+}
+#overlay[id]{
+	position:fixed;
+}
+
+#lightbox.done #lbLoadMessage{
+	display:none;
+}
+#lightbox.done #lbContent{
+	display:block;
+}
+#lightbox.loading #lbContent{
+	display:none;
+}
+#lightbox.loading #lbLoadMessage{
+	display:block;
+}
+
+#lightbox.done img{
+	width:100%;
+	height:100%;
+}

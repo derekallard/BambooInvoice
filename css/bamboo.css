@@ -1,0 +1,526 @@
+/*
+* control panel
+*/
+.control_panel {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 700px;
+}
+.control_panel a {
+	display: block;
+	text-decoration: none;
+	width: 90px;
+	height: 60px;
+	padding-left: 80px;
+	padding-top: 15px;
+	font-weight: bold;
+	color: #5E88B6;
+}
+.control_panel a:hover {
+	color: #003570;
+}
+.control_panel .root_invoices {
+	background: url(../img/root_sys_invoices.png) no-repeat center center;
+}
+.control_panel .root_clients {
+	background: url(../img/root_sys_clients.png) no-repeat center center;
+}
+.control_panel .root_reports {
+	background: url(../img/root_sys_reports.png) no-repeat center center;
+}
+.control_panel .root_search {
+	background: url(../img/root_sys_search.png) no-repeat center center;
+}
+.control_panel .root_settings {
+	background: url(../img/root_sys_settings.png) no-repeat center center;
+}
+.control_panel .root_utilities {
+	background: url(../img/root_sys_utilities.png) no-repeat center center;
+}
+.control_panel .root_help {
+	background: url(../img/root_sys_help.png) no-repeat center center;
+}
+.control_panel li {
+	margin: 10px;
+	float: left;
+}
+.clearer {
+	clear: left;
+}
+.clearer_r {
+	clear: right;
+}
+/*
+* Global text styles
+*/
+a {
+	color: #5E88B6;
+}
+a:hover {
+	text-decoration: none;
+	color: #003570;
+}
+:focus {
+	-moz-outline-style: none;
+	outline: none;
+}
+h1, h2, h3 {
+	color: #5E88B6;
+	font-weight: normal;
+}
+h4, h5, h6 {
+	color: #5E88B6;
+}
+h2 {
+	margin: 0 auto;
+	font-size: x-large;
+}
+li, blockquote, p, th, td, legend {
+	font-size: 80%;
+}
+body {
+	margin: 0px;
+
+	background: url(../img/menu_side.png) repeat-y;
+
+	font-family: Helvetica, Arial, Verdana, sans-serif; /*Trebuchet MS,*/
+}
+ul {
+	list-style: url(../img/bullet.gif) none;
+}
+
+a img {
+	border: 0;
+}
+
+/*
+* form styles
+*/
+input {
+	padding: 0;
+	border: 1px solid #666;
+}
+.noborder {
+	border: 0;
+	margin: 0;
+}
+
+/*
+* containers
+*/
+
+
+#allHolder {
+	background: url(../img/bodyback.png) repeat-x top;	max-width: 1300px;
+}
+
+#container {
+	background: url(../img/menu_bottom.png) no-repeat left bottom;
+}
+#masthead {
+	background: url(../img/village_back.png) no-repeat right top;
+	height: 109px;
+}
+#bamboo_logo {
+	text-indent: -5000px; /* take the text off screen for users who can load the stylesheet */
+	width: 311px;
+	height: 66px;
+	margin: 0;
+	padding: 0;
+	float: left;
+	color: #FFF;
+	background: url(../img/bamboo_logo.png) no-repeat left top;
+}
+#bamboo_logo a {
+	display: block;
+	width: 311px;
+	height: 66px;
+}
+/*
+* sub menu items
+*/
+#submenu {
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 10px 100px 0 0;
+}
+
+.submenu_link {
+	color: #FFF!important;
+	text-decoration: none;
+	display: block;
+	margin: 0 0 0 20px;
+	padding: 0 0 0 18px;
+	font-weight: bold;
+	text-transform: lowercase;
+}
+.submenu_link:hover {
+	color: #E8EEF6;
+	text-decoration: underline;
+}
+#submenu li {
+	float: left;
+}
+	.help {
+		background: url(../img/help.png) no-repeat left;
+	}
+	.logout {
+		background: url(../img/key_go.png) no-repeat left;
+	}
+/*
+* logout lightbox
+*/
+#logout_list a {
+	/* nothing here right now */
+}
+
+/*
+* action menu for invoices
+*/
+#invoice_action_menu {
+	width: 200px;
+	margin-top: -38px;
+	padding:32px 0;
+	background: url(../img/menu_top.png) no-repeat left top;
+	float: left;
+}
+#invoice_action_menu p {
+	margin: 50px 10px;
+}
+#invoice_action_menu ul, #invoice_action_menu li {
+	margin: 0;
+	padding: 0;
+}
+#invoice_action_menu li {
+	background: url(../img/menu_tab.png) no-repeat left center;
+	line-height: 26px;
+	margin-bottom: 10px;
+}
+#invoice_action_menu a {
+	display: block;
+	line-height: 26px;
+	text-decoration: none;
+	padding-left: 26px;
+	color: #FFF;
+	font-size: large;
+	margin: 0;
+	width: 164px; /* IE doesn't recognize the 100% nature of block */
+}
+#invoice_action_menu a.addinv {
+	background: url(../img/table_add.png) no-repeat left center;
+}
+#invoice_action_menu a.summaryinv {
+	background: url(../img/table.png) no-repeat left center;
+}
+#invoice_action_menu a.clientsummary {
+	background: url(../img/group_side.png) no-repeat left center;
+}
+#invoice_action_menu a.invemail {
+	background: url(../img/invemail.png) no-repeat left center;
+}
+#invoice_action_menu a.invnote {
+	background: url(../img/page_edit.png) no-repeat 5px center;
+}
+#invoice_action_menu a.invreminder {
+	background: url(../img/invreminder.png) no-repeat left center;
+}
+#invoice_action_menu a.invprint {
+	background: url(../img/invprint.png) no-repeat left center;
+}
+#invoice_action_menu #invprintli, #invoice_action_menu #invpayli, #invemailli {
+	display: none; /* gets turned back to block for js aware browsers since this tool relies on js */
+}
+#invoice_action_menu a.emailpdf {
+	background: url(../img/invpdf.png) no-repeat left center;
+}
+#invoice_action_menu a.invpayment {
+	background: url(../img/invpayment.png) no-repeat left center;
+}
+#invoice_action_menu a.invedit {
+	background: url(../img/invedit.png) no-repeat left center;
+}
+#invoice_action_menu a.invduplicate {
+	background: url(../img/invduplicate.png) no-repeat left center;
+}
+#invoice_action_menu a.deleteConfirm {
+	background: url(../img/invdelete.png) no-repeat left center;
+}
+#invoice_action_menu a.clientdelete {
+	background: url(../img/group_delete.png) no-repeat left center!important;
+}
+#invoice_action_menu a.clientedit {
+	background: url(../img/group_edit.png) no-repeat left center;
+}
+#invoice_action_menu a:hover {
+	color: #89A7C8;
+}
+#invoice_action_menu li.menu_promo {
+	background:none;
+	text-align: right;
+	font-size: 130%;
+	font-style: italic;
+	padding-right: 10px;
+	list-style-image: none;
+}
+
+/*
+* invoice_status_menu
+*/
+#invoice_status_menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 100px;
+}
+#invoice_status_menu li {
+	float: left;
+}
+#invoice_status_menu li a {
+	display: block;
+	margin: 0;
+	border: 1px solid #333;
+	border-top: 0;
+	text-decoration: none;
+	text-align: center;
+	background: #FFF;
+	color: #000;
+	font-size: small;
+	line-height:150%;
+	padding: 0 20px;
+	font-weight: bold;
+	float: left;
+}
+#invoice_status_menu li a:hover {
+	background: #F6F6F6; /*#E8EEF6;*/
+}
+#tip {
+	background: url(../img/quote_bottom.png) no-repeat center bottom;
+	clear: left;
+	padding: 5px;
+}
+/*
+* main_content items
+*/
+#main_content {
+	margin: 0 25px 0 0;
+	padding: 25px 0 0 225px;
+}
+.stripe {
+	width:99%; /* 100% causes IE to caluculate borders wrong and give it strange clearing and floating */
+	padding: 0;
+	border-collapse: collapse;
+	margin: 0 auto 15px auto;
+}
+.stripe th, .close {
+	color: #FFFFFF!important;
+	background: url(../img/grey_stripe_tile.jpg);
+	padding: 0;
+	text-align: center;
+	font-weight: bold;
+}
+.stripe td {
+	border-bottom: 1px solid #CCC;
+	text-align: left;
+	padding: 1px 5px;
+}
+.stripe th {
+	border-bottom: 1px solid #CCC;
+	text-align: left;
+	padding: 4px 5px;
+}
+
+.short_description {
+	color: #999;
+}
+
+.stripe tr.even td{
+	background: #F6F6F6;
+
+}
+.stripe tr.ruled td{
+	background: #E6EAFB; 
+}
+.stripe p, .address p {
+	margin: 0;
+}
+.stripe a {
+	display: block;
+	margin: 0;
+	color: #333;
+	text-decoration: none;
+	width: 100%;
+}
+.stripe a:hover {
+	text-decoration: underline;
+}
+.monthbreak {
+	color: #FFF!important;
+	font-weight: bold!important;
+	background: #7EA0C5!important;
+}
+.editdelete, .tax_status {
+	text-align: center;
+	white-space: nowrap;
+}
+.clienteditdelete {
+	white-space: nowrap;
+	width: 100px;
+}
+/*
+* footer styles
+*/
+#footer {
+	border-top: 1px solid #CCC;
+	text-align: right;
+	color:#999;
+	margin-top:25px;
+	padding-top: 5px;
+	clear: right;
+}
+#footer p {
+	margin: 0;
+	font-size: 80%;
+}
+.bamboo_invoice_bam, #donate {
+	color: #5E88B6;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.bamboo_invoice_inv {
+	font-weight: bold;
+	font-variant: small-caps;
+	color: #333;	
+}
+.cName {
+	font-weight: normal;
+}
+.error {
+	color: #C00!important;
+	font-weight: bold;
+}
+.download {
+	line-height: 34px!important;
+	padding: 0 20px 0 55px!important;
+	background: url(../img/download.png) no-repeat left!important;
+}
+#loginform #username, #loginform #password {
+	width: 200px;
+}
+
+#loginform p {
+	margin: 5px;
+}
+
+#loginform, .address, .work_description, #enterPayment, #emailInvoice, #invoice_note_form {
+	border: 1px solid #CCC;
+	background: #F6F6F6;
+	padding: 10px;
+	margin: 0;
+}
+#enterPayment, #emailInvoice, #invoice_note_form  {
+	margin-bottom: 10px;
+}
+.work_description h4, #enterPayment h4, #emailInvoice h4 {
+	margin: 0;
+}
+
+fieldset input {
+	border: 0;
+}
+#enterPayment label span, #newClientForm label span, #loginform label span, #clientcontact label span {
+	display: block;
+	float: left;
+	width: 150px;
+	margin: 0;
+}
+#newClientForm label, #loginform label {
+	line-height: 150%;
+}
+.required {
+	font-weight: bold;
+	color: #333;
+}
+/*
+* new invoice div
+*/
+.invoice_items label span {
+	display:none;
+}
+
+.invoice_items td p {
+	font-size: 100%;
+	margin: 0 0 10px 0;
+}
+
+.invoice_items td {
+	padding-top: 5px;
+	vertical-align: top;
+	display: table-cell;
+}
+
+
+.invoice_items {
+	width:99%; /* 100% causes IE to caluculate borders wrong and give it strange clearing and floating */
+	padding: 0;
+	border-collapse: collapse;
+	margin: 0 auto 15px auto;
+}
+.invoice_items th {
+	color: #FFFFFF!important;
+	background: url(../img/grey_stripe_tile.jpg);
+	padding: 3px;
+	text-align: left;
+	font-weight: bold;
+}
+
+#newinvoice {
+	background: #E8EEF6 url(../img/group_64.png) no-repeat left center;
+	width:99%;
+	margin:0;
+	padding: 0;
+}
+#newinvoice p, #newinvoice h2 {
+	padding: 0 0 0 128px;
+	margin: 0 10px 10px 10px;
+}
+#newinvoice div {
+	background: #5E88B6;
+	margin: 0;
+}
+#newinvoice div input {
+	margin: 3px 0;
+}
+#newinvoice div p {
+	line-height: 25px;
+	height: 25px;
+	margin: 0;
+}
+#newinvoice form {
+	margin:0;
+}
+
+/*
+ * Settings
+ */
+#settingsform label span {
+	display: block;
+	width: 200px;
+	float: left;
+}
+#settingsform p {
+	margin: 0 0 5px 0;
+	background: #F6F6F6;
+}
+
+/*
+ * Accounts
+ */
+#admin_list {
+	list-style: url(../img/user.png);
+}
+#admin_list li {
+	line-height: 16px;
+}

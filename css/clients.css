@@ -1,0 +1,89 @@
+/**
+* Client Info
+*/
+.clientHeader {
+	margin: 0;
+	border-bottom: 1px solid #999;
+	clear: right;
+}
+.clientInfo {
+/*	border-right: 2px solid #333;
+	border-top: 1px solid #333;*/
+	margin: 0 0 10px 0;
+	background: url(../img/client_bottom.png) repeat-x bottom;
+}
+.clientInfo h3, .clientInfo p {
+	margin: 5px 0 5px 0;
+}
+.contactList {
+	width: 350px;
+	float: right;
+	margin: 0;
+}
+.contactList table {
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 0;
+	border-collapse: collapse;
+	clear: both;
+}
+.contactList .contactname {
+	background: #F6F6F6;
+}
+.contactList p {
+	clear: both;
+	margin:0;
+}
+.contactList h4 {
+	margin: 0px 40px 0px 0px;
+	line-height: 1.75em;
+	float: left;
+	font-weight: bold;
+}
+.contactList .addcontact {
+	line-height: 1.75em;
+	font-size: small;
+}
+.displayLink {
+	text-decoration: none;
+	color: #5E88B6!important;
+	display: block;
+	padding-left: 32px;
+	line-height: 32px;
+	background: #fff url(../img/clients_arrow_up.png) no-repeat left center;
+}
+.displayLink img {
+	border: 0;
+	float: left;
+}
+.displayLink:hover {
+	background: #F6F6F6 url(../img/clients_arrow_over.png) no-repeat left center;
+}
+#clientContactEntry {
+	position: absolute;
+	width: 350px;
+	border: 1px solid #5E88B6;
+	padding: 10px;
+	cursor: move;
+	background: #F6F6F6 url(../img/client_contact_back.png) no-repeat bottom right;
+	top: 250px;
+	left: 300px;
+}
+a.clientnew {
+/*	background: url(/img/group_add.png) no-repeat left center;*/
+}
+.client_options a {
+	padding:3px 0;
+}
+a.client_notes {
+	background: url(../img/page_edit.png) no-repeat left center;
+	padding-left: 21px;
+}
+a.client_edit {
+	background: url(../img/group_edit.png) no-repeat left center;
+	padding-left: 21px;
+}
+a.client_delete {
+	background: url(../img/group_delete.png) no-repeat left center;
+	padding-left: 21px;
+}

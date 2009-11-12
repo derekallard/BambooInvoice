@@ -1,0 +1,21 @@
+#masthead, #invoice_action_menu, #submenu, #invoice_action_menu ul, #pagination, #footer, #enterPayment {
+	display: none;
+}
+
+#main_content {
+	margin: 0 1px;;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#invoicework_description {
+	display: none;
+}
+
+.error {
+	display: none;
+}

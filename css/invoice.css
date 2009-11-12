@@ -1,0 +1,80 @@
+h2 span {
+	text-transform: uppercase;
+}
+#invoicework_description .dateHolder {
+	float: left;
+	width: 150px;
+	display: block;
+	margin: 0 15px 0 0;
+	padding: 0;
+	border: 0;
+	background: inherit;
+}
+#invoicework_description .comment {
+	margin: 0 0 0 150px;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	border: 1px solid #CCC;
+	padding: 0 15px;
+	background: #FFF;
+}
+.commentintro {
+	font-weight: bold;
+	margin: 3px 0;
+}
+#filter {
+	background: #F6F6F6 url(../img/livesearch.png) no-repeat right center;
+	display: none;
+	margin: 0 0 15px 0;
+}
+#exportOption {
+	background: #F6F6F6 url(../img/export.png) no-repeat right center;
+	border: 1px solid #CCC;
+	padding: 10px;
+	margin: 0;
+}
+#filter p {
+	margin: 0;
+}
+#overduenotice {
+	position: absolute;
+	top: 185px;
+	left: 600px;
+}
+/*
+* Invoice view styles
+*/
+.invoiceViewHold {
+	border: 1px solid #CCC;
+	padding: 10px;
+	margin: 0 0 15px 0;
+/*	background: #fff url(/img/logo/logo.png) no-repeat right top;*/
+}
+.invoiceViewHold #companyDetails {
+	float: right;
+}
+.invoiceViewHold hr {
+	clear: right;
+	background: #CCC;
+	color: #CCC;
+	height: 1px;
+	border: 0;
+}
+#recipients {
+	width: 200px;
+	float: left;
+	margin: 20px 15px 0 0;
+}
+#emailInvoice textarea {
+	width: 390px;
+}
+#emailInvoice #emailHolder {
+	padding-left: 250px;
+}
+
+#emailInvoice #emailHolder textarea {
+	width: 98%;
+}
+.invoice_items textarea {
+	width: 100%;
+}

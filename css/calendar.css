@@ -1,0 +1,53 @@
+.calendar {
+	border: 1px #6975A3 solid;
+	background-color: transparent;
+	text-align: center;
+}
+.calheading {
+	background-color: #5E88B6;
+	color: #fff;
+	font-weight: bold;
+}
+.calnavleft, .calnavright {
+	background-color: #5E88B6;
+	font-weight: bold;
+	color: #fff;
+	padding: 4px;
+	cursor: pointer;
+}
+
+.caldayheading {
+	background: #333 url(../img/grey_stripe_tile.jpg);
+	color: #fff;
+	padding: 6px 2px 6px 2px;
+}
+.caldaycells{
+	color: #000;
+	background-color: #D1D7E6;
+	padding: 4px;
+	border: 1px #E0E5F1 solid;
+	cursor: pointer;
+}
+.caldaycellhover{
+	color: #fff;
+	background-color: #B3BCD4;
+	padding: 4px;
+	border: 1px #5E88B6 solid;
+	cursor: pointer;
+}
+.caldayselected{
+	background-color: #5E88B6;
+	color:	#fff;
+	font-weight: bold;
+	border: 1px #5E88B6 solid;
+	padding: 3px;
+	cursor: pointer;
+}
+.calblanktop {
+	background-color: #fff;
+	padding: 4px;
+}
+.calblankbot {
+	background-color: #fff;
+	padding: 4px;
+}
