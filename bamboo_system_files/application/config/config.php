@@ -359,5 +359,18 @@ $config['short_description_characters'] = 50;
 // 'default' gives January 1, 2009
 $config['invoice_date_format'] = 'default';
 
+
+/*
+|--------------------------------------------------------------------------
+| Local Configuration
+|--------------------------------------------------------------------------
+|
+| Load a local file configuration if exists.
+|
+*/
+if (file_exists(dirname(__FILE__) . '/config.local.php')) {
+        include(dirname(__FILE__) . '/config.local.php');
+}
+
 /* End of file config.php */
 /* Location: ./system/application/config/config.php */
