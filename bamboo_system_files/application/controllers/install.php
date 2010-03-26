@@ -458,6 +458,7 @@ class Install extends Controller {
 				'country'	=> array('type' => 'VARCHAR', 'constraint' => 25),
 				'postal_code'	=> array('type' => 'VARCHAR', 'constraint' => 10),
 				'website'	=> array('type' => 'VARCHAR', 'constraint' => 150),
+				'tax_code'	=> array('type' => 'VARCHAR', 'constraint' => 75)
 			);
 
 			$this->dbforge->add_column('invoices', $fields);

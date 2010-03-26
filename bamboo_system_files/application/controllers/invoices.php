@@ -204,15 +204,24 @@ class Invoices extends MY_Controller {
 		else
 		{
 			$invoice_data = array(
-									'client_id' => $this->input->post('client_id'),
-									'invoice_number' => $this->input->post('invoice_number'),
-									'dateIssued' => $this->input->post('dateIssued'),
-									'tax1_desc' => $this->input->post('tax1_description'),
-									'tax1_rate' => $this->input->post('tax1_rate'),
-									'tax2_desc' => $this->input->post('tax2_description'),
-									'tax2_rate' => $this->input->post('tax2_rate'),
-									'invoice_note' => $this->input->post('invoice_note')
-								);
+				'client_id' => $this->input->post('client_id'),
+				'invoice_number' => $this->input->post('invoice_number'),
+				'dateIssued' => $this->input->post('dateIssued'),
+				'tax1_desc' => $this->input->post('tax1_description'),
+				'tax1_rate' => $this->input->post('tax1_rate'),
+				'tax2_desc' => $this->input->post('tax2_description'),
+				'tax2_rate' => $this->input->post('tax2_rate'),
+				'invoice_note' => $this->input->post('invoice_note'),
+				'name' => $data['row']->name,
+				'address1' => $data['row']->address1,
+				'address2' => $data['row']->address2,
+				'city' => $data['row']->city,
+				'province' => $data['row']->province,
+				'country' => $data['row']->country,
+				'postal_code' => $data['row']->postal_code,
+				'website' => $data['row']->website,
+				'tax_code' => $data['row']->tax_code
+			);
 
 			$invoice_id = $this->invoices_model->addInvoice($invoice_data);
 
@@ -226,12 +235,12 @@ class Invoices extends MY_Controller {
 					$taxable = (isset($item['taxable']) && $item['taxable'] == 1) ? 1 : 0;
 
 					$invoice_items = array(
-											'invoice_id' 		=> $invoice_id,
-											'quantity' 			=> $item['quantity'],
-											'amount' 			=> $item['amount'],
-											'work_description' 	=> $item['work_description'],
-											'taxable' 			=> $taxable
-										);
+						'invoice_id'		=> $invoice_id,
+						'quantity'		=> $item['quantity'],
+						'amount'		=> $item['amount'],
+						'work_description'	=> $item['work_description'],
+						'taxable'		=> $taxable
+					);
 
 					$this->invoices_model->addInvoiceItem($invoice_items);
 				}
@@ -348,12 +357,12 @@ class Invoices extends MY_Controller {
 
 		// some hidden form data
 		$data['form_hidden'] = array(
-										'id'	=> $data['row']->id,
-										'tax1_rate'	=> $data['row']->tax1_rate,
-										'tax1_description'	=> $data['row']->tax1_desc,
-										'tax2_rate'	=> $data['row']->tax2_rate,
-										'tax2_description'	=> $data['row']->tax2_desc,
-									);
+			'id'	=> $data['row']->id,
+			'tax1_rate'	=> $data['row']->tax1_rate,
+			'tax1_description'	=> $data['row']->tax1_desc,
+			'tax2_rate'	=> $data['row']->tax2_rate,
+			'tax2_description'	=> $data['row']->tax2_desc,
+		);
 
 		$taxable = ($this->clients_model->get_client_info($data['row']->client_id, 'tax_status')->tax_status == 1) ? 'true' : 'false';
 
@@ -386,15 +395,24 @@ class Invoices extends MY_Controller {
 			if ($this->invoices_model->uniqueInvoiceNumberEdit($this->input->post('invoice_number'), $this->input->post('id')))
 			{
 				$invoice_data = array(
-											'client_id' 		=> $this->input->post('client_id'),
-											'invoice_number' 	=> $this->input->post('invoice_number'),
-											'dateIssued' 		=> $this->input->post('dateIssued'),
-											'tax1_desc' 		=> $this->input->post('tax1_description'),
-											'tax1_rate' 		=> $this->input->post('tax1_rate'),
-											'tax2_desc' 		=> $this->input->post('tax2_description'),
-											'tax2_rate' 		=> $this->input->post('tax2_rate'),
-											'invoice_note' 		=> $this->input->post('invoice_note')
-									);
+					'client_id' 		=> $this->input->post('client_id'),
+					'invoice_number' 	=> $this->input->post('invoice_number'),
+					'dateIssued' 		=> $this->input->post('dateIssued'),
+					'tax1_desc' 		=> $this->input->post('tax1_description'),
+					'tax1_rate' 		=> $this->input->post('tax1_rate'),
+					'tax2_desc' 		=> $this->input->post('tax2_description'),
+					'tax2_rate' 		=> $this->input->post('tax2_rate'),
+					'invoice_note' 		=> $this->input->post('invoice_note'),
+					'name'			=> $data['row']->name,
+					'address1'		=> $data['row']->address1,
+					'address2'		=> $data['row']->address2,
+					'city'			=> $data['row']->city,
+					'province'		=> $data['row']->province,
+					'country'		=> $data['row']->country,
+					'postal_code'		=> $data['row']->postal_code,
+					'website'		=> $data['row']->website,
+					'tax_code'		=> $data['row']->tax_code
+				);
 
 				$invoice_id = $this->invoices_model->updateInvoice($this->input->post('id'), $invoice_data);
 
@@ -499,15 +517,24 @@ class Invoices extends MY_Controller {
 			if ($this->invoices_model->uniqueInvoiceNumber($this->input->post('invoice_number'), $this->input->post('id')))
 			{
 				$invoice_data = array(
-										'client_id' => $this->input->post('client_id'),
-										'invoice_number' => $this->input->post('invoice_number'),
-										'dateIssued' => $this->input->post('dateIssued'),
-										'tax1_desc' => $this->input->post('tax1_description'),
-										'tax1_rate' => $this->input->post('tax1_rate'),
-										'tax2_desc' => $this->input->post('tax2_description'),
-										'tax2_rate' => $this->input->post('tax2_rate'),
-										'invoice_note' => $this->input->post('invoice_note')
-									);
+					'client_id' => $this->input->post('client_id'),
+					'invoice_number' => $this->input->post('invoice_number'),
+					'dateIssued' => $this->input->post('dateIssued'),
+					'tax1_desc' => $this->input->post('tax1_description'),
+					'tax1_rate' => $this->input->post('tax1_rate'),
+					'tax2_desc' => $this->input->post('tax2_description'),
+					'tax2_rate' => $this->input->post('tax2_rate'),
+					'invoice_note' => $this->input->post('invoice_note'),
+					'name' => $data['row']->name,
+					'address1' => $data['row']->address1,
+					'address2' => $data['row']->address2,
+					'city' => $data['row']->city,
+					'province' => $data['row']->province,
+					'country' => $data['row']->country,
+					'postal_code' => $data['row']->postal_code,
+					'website' => $data['row']->website,
+					'tax_code' => $data['row']->tax_code
+				);
 
 				$invoice_id = $this->invoices_model->addInvoice($invoice_data);
 

@@ -91,7 +91,7 @@ class invoices_model extends Model {
 
 	function getSingleInvoice($invoice_id)
 	{
-		$this->db->select('invoices.*, clients.name, clients.address1, clients.address2, clients.city, clients.country, clients.province, clients.website, clients.postal_code, clients.tax_code');
+		$this->db->select('invoices.*');
 		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_payments').'.amount_paid) FROM '.$this->db->dbprefix('invoice_payments').' WHERE '.$this->db->dbprefix('invoice_payments').'.invoice_id=' . $invoice_id . ') AS amount_paid', FALSE); 
 		$this->db->select('TO_DAYS('.$this->db->dbprefix('invoices').'.dateIssued) - TO_DAYS(curdate()) AS daysOverdue', FALSE);
 		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id=' . $invoice_id . ') AS total_notax', FALSE);
@@ -99,7 +99,6 @@ class invoices_model extends Model {
 		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity * ('.$this->db->dbprefix('invoices').'.tax2_rate/100 * '.$this->db->dbprefix('invoice_items').'.taxable)) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id=' . $invoice_id . ') AS total_tax2', FALSE);
 		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity + ROUND(('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity * ('.$this->db->dbprefix('invoices').'.tax1_rate/100 + '.$this->db->dbprefix('invoices').'.tax2_rate/100) * '.$this->db->dbprefix('invoice_items').'.taxable), 2)) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id=' . $invoice_id . ') AS total_with_tax', FALSE);
 
-		$this->db->join('clients', 'invoices.client_id = clients.id');
 		$this->db->join('invoice_items', 'invoices.id = invoice_items.invoice_id', 'left');
 		$this->db->join('invoice_payments', 'invoices.id = invoice_payments.invoice_id', 'left');
 		$this->db->groupby('invoices.id'); 
@@ -218,12 +217,11 @@ class invoices_model extends Model {
 			$this->db->having('ROUND(amount_paid, 2) >= ROUND(subtotal, 2)', '', FALSE);
 		}
 
-		$this->db->select('invoices.*, clients.name');
+		$this->db->select('invoices.*');
 		$this->db->select('(SELECT SUM(amount_paid) FROM '.$this->db->dbprefix('invoice_payments').' WHERE invoice_id='.$this->db->dbprefix('invoices').'.id) AS amount_paid', FALSE); 
 		$this->db->select('TO_DAYS('.$this->db->dbprefix('invoices').'.dateIssued) - TO_DAYS(curdate()) AS daysOverdue', FALSE);
 		$this->db->select('ROUND((SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity + ('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity * ('.$this->db->dbprefix('invoices').'.tax1_rate/100 + '.$this->db->dbprefix('invoices').'.tax2_rate/100) * '.$this->db->dbprefix('invoice_items').'.taxable)) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id='.$this->db->dbprefix('invoices').'.id), 2) AS subtotal', FALSE);
 
-		$this->db->join('clients', 'invoices.client_id = clients.id');
 		$this->db->join('invoice_items', 'invoices.id = invoice_items.invoice_id', 'left');
 		$this->db->join('invoice_payments', 'invoices.id = invoice_payments.invoice_id', 'left');
 
