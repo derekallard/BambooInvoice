@@ -329,6 +329,12 @@ $config['rewrite_short_tags'] = FALSE;
 // numbers to be controlled by the individual client, rather then globally
 $config['unique_invoice_per_client'] = FALSE;
 
+// Invoice number format.
+// 'number' - Number only.
+// 'year_number' - '2010/1'
+// default (not defined) - Number only.
+//$config['invoice_number_format'] = 'year_number';
+
 // setting 'currency_decimal' will use this character instead of a '.' to separate
 // the cents.  For example: $24.67 vs $24,67 vs $24_67... or whatever
 $config['currency_decimal'] = '.';

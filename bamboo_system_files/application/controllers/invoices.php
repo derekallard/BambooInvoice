@@ -180,7 +180,7 @@ class Invoices extends MY_Controller {
 
 		$last_invoice_number = $this->invoices_model->lastInvoiceNumber($id);
 		($last_invoice_number != '') ? $data['lastInvoiceNumber'] = $last_invoice_number : $data['lastInvoiceNumber'] = '';
-		$data['suggested_invoice_number'] = (is_numeric($last_invoice_number)) ? $last_invoice_number+1 : '';
+		$data['suggested_invoice_number'] = $this->invoices_model->figureNextInvoiceNumber($id);
 
 		$taxable = ($data['row']->tax_status == 1) ? 'true' : 'false';
 
@@ -494,7 +494,7 @@ class Invoices extends MY_Controller {
 
 		$last_invoice_number = $this->invoices_model->lastInvoiceNumber($id);
 		($last_invoice_number != '') ? $data['lastInvoiceNumber'] = $last_invoice_number : $data['lastInvoiceNumber'] = '';
-		$data['invoice_number'] = (is_numeric($last_invoice_number)) ? $last_invoice_number+1 : '';
+		$data['invoice_number'] = $this->invoices_model->figureNextInvoiceNumber($id);
 		$data['last_number_suggestion'] = '('.$this->lang->line('invoice_last_used').' '.$last_invoice_number.')';
 
 		$data['page_title'] = $this->lang->line('menu_duplicate_invoice');
@@ -996,7 +996,7 @@ class Invoices extends MY_Controller {
 	function _validation()
 	{
 		$rules['client_id'] 		= 'required|numeric';
-		$rules['invoice_number'] 	= 'trim|required|htmlspecialchars|max_length[12]|alpha_dash|callback_uniqueInvoice';
+		$rules['invoice_number'] 	= 'trim|required|htmlspecialchars|max_length[12]|callback_validateInvoice';
 		$rules['dateIssued'] 		= 'trim|htmlspecialchars|callback_dateIssued';
 		$rules['invoice_note'] 		= 'trim|htmlspecialchars|max_length[2000]';
 		$rules['tax1_description'] 	= 'trim|htmlspecialchars|max_length[50]';
@@ -1023,7 +1023,7 @@ class Invoices extends MY_Controller {
 	function _validation_edit()
 	{
 		$rules['client_id'] 		= 'required|numeric';
-		$rules['invoice_number'] 	= 'trim|required|htmlspecialchars|max_length[50]|alpha_dash';
+		$rules['invoice_number'] 	= 'trim|required|htmlspecialchars|max_length[50]|callback_validateInvoice';
 		$rules['dateIssued'] 		= 'trim|htmlspecialchars|callback_dateIssued';
 		$rules['invoice_note'] 		= 'trim|htmlspecialchars|max_length[2000]';
 		$rules['tax1_description'] 	= 'trim|htmlspecialchars|max_length[50]';
@@ -1045,11 +1045,42 @@ class Invoices extends MY_Controller {
 		$this->validation->set_error_delimiters('<span class="error">', '</span>');
 	}
 
+	function validateInvoice()
+	{
+		$re = $this->uniqueInvoice();
+		if (! $re) {
+			return $re;
+		}
+
+		switch ($this->config->item('invoice_number_format')) {
+			case 'year_number':
+				$re = $this->validateInvoiceYearNumber();
+				break;
+
+			case 'number':
+			default:
+				$re = is_numeric($this->input->post('invoice_number'));
+		}
+
+		return $re;
+	}
+
 	function uniqueInvoice()
 	{
-		$this->validation->set_message('uniqueInvoice', $this->lang->line('invoice_not_unique'));
+		$this->validation->set_message('validateInvoice', $this->lang->line('invoice_not_unique'));
 
 		return $this->invoices_model->uniqueInvoiceNumber($this->input->post('invoice_number'));
+	}
+
+	function validateInvoiceYearNumber()
+	{
+		$this->validation->set_message('validateInvoice', $this->lang->line('invoice_invalid_year_number'));
+
+		if (is_numeric(substr($this->input->post('invoice_number'), 0, 4))) {
+			return is_numeric(substr($this->input->post('invoice_number'), 5));
+		} else {
+			return FALSE;
+		}
 	}
 } 
 ?>

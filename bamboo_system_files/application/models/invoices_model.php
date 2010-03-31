@@ -258,6 +258,42 @@ class invoices_model extends Model {
 		}
 	}
 
+	function figureNextInvoiceNumber($client_id)
+	{
+		$last = $this->lastInvoiceNumber($client_id);
+
+		switch ($this->config->item('invoice_number_format')) {
+			case 'year_number':
+				$today = getdate();
+				if ($last == '0') {
+					$year = $today['year'];
+					$number = 1;
+				} else {
+					$year = intval(substr($last, 0, 4));
+					$number = intval(substr($last, 5));
+
+					if ($today['year'] > $year) {
+						$year = $today['year'];
+						$number = 1;
+					} else {
+						$number++;
+					}
+				}
+				$newNumber = sprintf('%d/%d', $year, $number);
+				break;
+
+			case 'number':
+			default:
+				if (is_numeric($last)) {
+					$newNumber = strval($last++);
+				} else {
+					$newNumber = $last;
+				}
+		}
+
+		return $newNumber;
+	}
+
 	// --------------------------------------------------------------------
 
 	function uniqueInvoiceNumber($invoice_number)
