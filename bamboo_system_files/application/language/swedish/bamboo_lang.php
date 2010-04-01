@@ -99,6 +99,7 @@ $lang['invoice_generated_by'] = 'Fakturan genererad av';
 $lang['invoice_history_comments'] = 'Fakturahistorik &amp; Kommentarer';
 $lang['invoice_invoice'] = 'Faktura';
 $lang['invoice_blind_copy_me'] = 'blind copy me on this email'; // TO BE TRANSLATED
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice_delete_success'] = 'Fakturan Ta bortd';
 $lang['invoice_invoice_edit_success'] = 'Fakturan redigerad';
 $lang['invoice_is_tax_exempt'] = 'är momsfria';

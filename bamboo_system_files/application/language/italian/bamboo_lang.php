@@ -102,6 +102,7 @@ $lang['invoice_generated_by'] = 'Fattura creata con';
 $lang['invoice_history_comments'] = 'Storico fattura &amp; annotazioni';
 $lang['invoice_invoice'] = 'Fattura';
 $lang['invoice_blind_copy_me'] = 'blind copy me on this email'; // TO BE TRANSLATED
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice_delete_success'] = 'Fattura eliminata';
 $lang['invoice_invoice_edit_success'] = 'Fattura modificata';
 $lang['invoice_is_tax_exempt'] = '&egrave un esempio di tassa';

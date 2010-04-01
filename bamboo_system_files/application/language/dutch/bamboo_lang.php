@@ -94,6 +94,7 @@ $lang['invoice_email_success'] = 'Factuur succesvol verstuurd. U kunt hieronder 
 $lang['invoice_export_to'] = 'Exporteer uw factuur data naar';
 $lang['invoice_generated_by'] = 'Factuur gegenereerd door'; 
 $lang['invoice_history_comments'] = 'Factuurgeschiedenis &amp; notities';
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice'] = 'Factuur';
 $lang['invoice_invoice_delete_success'] = 'Factuur succesvol verwijderd';
 $lang['invoice_invoice_edit_success'] = 'Factuur succesvol gewijzigd';

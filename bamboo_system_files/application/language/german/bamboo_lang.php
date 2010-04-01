@@ -98,6 +98,7 @@ $lang['invoice_generated_by'] = 'Rechnung vorbei erzeugt';
 $lang['invoice_history_comments'] = 'Rechnungsdetails &amp; Kommentare';
 $lang['invoice_invoice'] = 'Rechnung';
 $lang['invoice_blind_copy_me'] = 'blind copy me on this email'; // TO BE TRANSLATED
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice_delete_success'] = 'Rechnung erfolgreich gel&ouml;scht';
 $lang['invoice_invoice_edit_success'] = 'Rechnung erfolgreich bearbeitet';
 $lang['invoice_item'] = 'Item'; // to be translated

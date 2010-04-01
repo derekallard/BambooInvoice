@@ -94,6 +94,7 @@ $lang['invoice_email_success'] = 'Facture expédiée avec succès. Vous pouvez c
 $lang['invoice_export_to'] = 'Exporter les données vers';
 $lang['invoice_generated_by'] = 'Facture produite près';
 $lang['invoice_history_comments'] = 'Historique et commentaires';
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice'] = 'Facture';
 $lang['invoice_invoice_delete_success'] = 'Facture supprimée avec succès';
 $lang['invoice_invoice_edit_success'] = 'Facture modifiée avec succès';

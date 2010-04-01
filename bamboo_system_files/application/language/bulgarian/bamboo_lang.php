@@ -98,6 +98,7 @@ $lang['invoice_generated_by'] = 'Фактура издадена от';
 $lang['invoice_history_comments'] = 'История на фактура &amp; Коментари';
 $lang['invoice_invoice'] = 'Фактура';
 $lang['invoice_blind_copy_me'] = 'blind copy me on this email'; // TO BE TRANSLATED
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice_delete_success'] = 'Фактурата е успешно изтрита';
 $lang['invoice_invoice_edit_success'] = 'Фактурата е успешно променена';
 $lang['invoice_is_tax_exempt'] = 'е данъчно освободен';

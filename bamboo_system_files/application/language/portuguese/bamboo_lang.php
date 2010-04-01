@@ -103,6 +103,7 @@ $lang['invoice_history_comments'] = 'Hist&oacute;rico da factura &amp; notas int
 $lang['invoice_item'] = 'Item';
 $lang['invoice_invoice'] = 'Factura';
 $lang['invoice_new_item'] = 'Novo item';
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice_delete_success'] = 'Factura apagada com sucesso';
 $lang['invoice_invoice_edit_success'] = 'Factura editada com sucesso';
 $lang['invoice_is_tax_exempt'] = 'e isenta de imposto';

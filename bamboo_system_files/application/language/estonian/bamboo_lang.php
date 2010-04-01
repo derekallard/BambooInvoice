@@ -101,6 +101,7 @@ $lang['invoice_email_success'] = 'Arve edukalt E-kirjaga saadetud. Selle Arvega 
 $lang['invoice_export_to'] = 'Teisenda arvete andmebaas teisel kujul';
 $lang['invoice_generated_by'] = 'Arve loodud';
 $lang['invoice_history_comments'] = 'Arve ajalugu &amp; M&auml;rkmed';
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice'] = 'Arve';
 $lang['invoice_blind_copy_me'] = 'Pimekoopia sellest e-kirjast ka minule';
 $lang['invoice_invoice_delete_success'] = 'Arve edukalt kustutatud';

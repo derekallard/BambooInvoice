@@ -102,6 +102,7 @@ $lang['invoice_generated_by'] = 'Faktura genereret af';
 $lang['invoice_history_comments'] = 'Faktura Historie &amp; Private Noter';
 $lang['invoice_invoice'] = 'Faktura';
 $lang['invoice_blind_copy_me'] = 'blind copy me on this email'; // TO BE TRANSLATED
+$lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED
 $lang['invoice_invoice_delete_success'] = 'Faktura slettet';
 $lang['invoice_invoice_edit_success'] = 'Faktura redigeret';
 $lang['invoice_is_tax_exempt'] = 'er skattefri';
