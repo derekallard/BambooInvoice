@@ -1,14 +1,14 @@
 <?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['accounts_admin_account_create_success'] = 'Admin account successfully created'; // TO BE TRANSLATED
-$lang['accounts_admin_account_create_fail'] = 'Problem creating Admin account'; // TO BE TRANSLATED
-$lang['accounts_admin_account_delete_success'] = 'Admin account successfully deleted'; // TO BE TRANSLATED
-$lang['accounts_admin_account_delete_fail'] = 'Problem deleting Admin account'; // TO BE TRANSLATED
+$lang['accounts_admin_account_create_success'] = 'Cuenta de Administración creada satisfactoriamente';
+$lang['accounts_admin_account_create_fail'] = 'Problema creando la cuenta de Administración';
+$lang['accounts_admin_account_delete_success'] = 'Cuenta de Administración borrada satisfactoriamente';
+$lang['accounts_admin_account_delete_fail'] = 'Problema borrando la cuenta de Administración';
 
 $lang['actions_cancel'] = 'Cancelar';
 $lang['actions_change'] = 'Cambiar';
 $lang['actions_create_invoice'] = 'Crear factura';
-$lang['actions_donate'] = 'Donate'; // TO BE TRANSLATED
+$lang['actions_donate'] = 'Donar';
 $lang['actions_delete'] = 'Eliminar';
 $lang['actions_edit'] = 'Editar';
 $lang['actions_required_fields'] = 'Campos obligatorios';
@@ -101,14 +101,14 @@ $lang['invoice_export_to'] = 'Exportar datos de factura a';
 $lang['invoice_generated_by'] = 'Factura generada por';
 $lang['invoice_history_comments'] = 'Historial y comentarios de factura';
 $lang['invoice_invoice'] = 'Factura';
-$lang['invoice_blind_copy_me'] = 'blind copy me on this email'; // TO BE TRANSLATED
+$lang['invoice_blind_copy_me'] = 'Enviarme copia oculta de este correo';
 $lang['invoice_invalid_year_number'] = 'Formato no válido. Debe ser algo así: 2010/1';
 $lang['invoice_invoice_delete_success'] = 'Se ha eliminado la factura con éxito';
 $lang['invoice_invoice_edit_success'] = 'Se ha editado la factura con éxito';
 $lang['invoice_is_tax_exempt'] = 'is tax exempt';
-$lang['invoice_item'] = 'Item'; // to be translated
+$lang['invoice_item'] = 'Elemento';
 $lang['invoice_last_used'] = 'último número en uso ';
-$lang['invoice_new_item'] = 'New Item'; // to be translated
+$lang['invoice_new_item'] = 'Nuevo elemento';
 $lang['invoice_new_invoice'] = 'Factura nueva';
 $lang['invoice_new_invoice_error'] = 'Error en la factura nueva';
 $lang['invoice_new_invoice_to'] = 'Nueva factura para';
@@ -149,11 +149,11 @@ $lang['invoice_tax_status'] = 'Estatus impositivo';
 $lang['invoice_taxable'] = 'Lleva carga fiscal';
 $lang['invoice_there_are_currently'] = 'Actualmente hay';
 $lang['invoice_total'] = 'Total';
-$lang['invoice_work_description'] = 'Descripción del trabajo';
+$lang['invoice_work_description'] = 'Concepto';
 $lang['invoice_you_may_now'] = 'Quizás sepas';
 $lang['invoice_you'] = 'You';
 
-$lang['login_allow_login'] = 'Add new admin account'; // to be translated
+$lang['login_allow_login'] = 'Añadir nueva cuenta de administrador';
 $lang['login_caps_lock'] = 'Asegúrate que la tecla  <em>Bloquear Mayúsculas</em> no está activada';
 $lang['login_forgot_password'] = 'Contraseña olvidada';
 $lang['login_login'] = 'Ingresar';
@@ -189,7 +189,7 @@ $lang['menu_changelog'] = 'Cambiar Log';
 $lang['menu_clients'] = 'Clientes';
 $lang['menu_credits'] = 'Créditos';
 $lang['menu_delete_invoice'] = 'Eliminar factura';
-$lang['menu_duplicate_invoice'] = 'Duplicate Invoice'; // TO BE TRANSLATED
+$lang['menu_duplicate_invoice'] = 'Duplicar factura';
 $lang['menu_did_you_know'] = 'Sabías que?';
 $lang['menu_edit_invoice'] = 'Editar factura';
 $lang['menu_email_invoice'] = 'Enviar factura';
@@ -210,7 +210,7 @@ $lang['menu_see_also'] = 'Ver también';
 $lang['menu_settings'] = 'Configuración';
 $lang['menu_utilties'] = 'Utilidades';
 
-$lang['notice_english_only'] = 'Available in English Only'; // to be translated
+$lang['notice_english_only'] = 'Sólo disponible en inglés';
 $lang['notice_generated_by'] = 'Generado por';
 
 $lang['reports_back_to_reports'] = 'volver a Informes';
@@ -225,7 +225,7 @@ $lang['reports_second_quarter'] = 'segundo trimestre';
 $lang['reports_start_date'] = 'Fecha de inicio (yyyy-mm-dd)';
 $lang['reports_third_quarter'] = 'cuarto trimestre';
 $lang['reports_year_to_date'] = 'Años hasta la fecha';
-$lang['reports_no_data'] = 'There is no data available for those dates.'; // to be translated
+$lang['reports_no_data'] = 'No hay datos disponibles en ese rango de fechas.';
 $lang['reports_yearly_income'] = 'Ingresos anuales';
 
 $lang['settings_account_settings'] = 'Configurar cuenta'; 
@@ -244,7 +244,7 @@ $lang['settings_modify_success'] = 'Configuración modificada con éxito';
 $lang['settings_note_max_chars'] = '(max 255 letras)';
 $lang['settings_primary_contact'] = 'Contacto primario';
 $lang['settings_primary_email'] = 'Dirección email del contacto primario';
-$lang['settings_primary_email_message'] = 'Changing this email will also change the email you use to login with.'; // TO BE TRANSLATED
+$lang['settings_primary_email_message'] = 'Cambiando esta dirección también cambias la que usas para acceder.';
 $lang['settings_save_settings'] = 'Guardar configuración';
 $lang['settings_save_invoices'] = 'Guardar Factura';
 $lang['settings_save_invoices_warning'] = '<strong>Precaución:</strong> Desmarcando esta opción puede provocar la perdida de todas las facturas almacenadas.'; 
