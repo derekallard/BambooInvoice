@@ -146,10 +146,10 @@ table.stripe td {
 		</tr>
 		<?php foreach ($items->result() as $item):?>
 		<tr valign="top">
-			<td><p><?php echo str_replace('.00', '', $item->quantity);?></p></td>
+			<td><p><?php if ($item->quantity > floor($item->quantity)) {echo formatNumber($item->quantity);} else {echo str_replace('.00', '', $item->quantity);}?></p></td>
 			<td><?php echo nl2br(str_replace(array('\n', '\r'), "\n", $item->work_description));?></td>
-			<td><p><?php echo $this->settings_model->get_setting('currency_symbol') . str_replace('.', $this->config->item('currency_decimal'), $item->amount);?> <?php if ($item->taxable == 0){echo '(' . $this->lang->line('invoice_not_taxable') . ')';}?></p></td>
-			<td><p><?php echo $this->settings_model->get_setting('currency_symbol') . number_format($item->quantity * $item->amount, 2, $this->config->item('currency_decimal'), '');?></p></td>
+			<td><p><?php echo formatNumber($item->amount, TRUE);?> <?php if ($item->taxable == 0){echo '(' . $this->lang->line('invoice_not_taxable') . ')';}?></p></td>
+			<td><p><?php echo formatNumber($item->quantity * $item->amount, TRUE);?></p></td>
 		</tr>
 		<?php endforeach;?>
 	</table>

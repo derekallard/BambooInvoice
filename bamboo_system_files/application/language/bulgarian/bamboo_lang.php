@@ -103,6 +103,7 @@ $lang['invoice_invoice_delete_success'] = 'Фактурата е успешно 
 $lang['invoice_invoice_edit_success'] = 'Фактурата е успешно променена';
 $lang['invoice_is_tax_exempt'] = 'е данъчно освободен';
 $lang['invoice_item'] = 'Item'; // to be translated
+$lang['invoice_item_total'] = 'Total'; // TO BE TRANSLATED
 $lang['invoice_last_used'] = 'последен използван номер ';
 $lang['invoice_new_item'] = 'New Item'; // to be translated
 $lang['invoice_new_invoice'] = 'Нова Фактура';

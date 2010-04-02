@@ -161,14 +161,14 @@ if ($row->amount_paid < $row->total_with_tax):
 			<th><?php echo $this->lang->line('invoice_quantity');?></th>
 			<th><?php echo $this->lang->line('invoice_work_description');?></th>
 			<th><?php echo $this->lang->line('invoice_amount_item');?></th>
-			<th><?php echo $this->lang->line('invoice_total');?></th>
+			<th><?php echo $this->lang->line('invoice_item_total');?></th>
 		</tr>
 		<?php foreach ($items->result() as $item):?>
 		<tr>
-			<td><p><?php echo str_replace('.00', '', $item->quantity);?></p></td>
+			<td><p><?php if ($item->quantity > floor($item->quantity)) {echo formatNumber($item->quantity);} else {echo str_replace('.00', '', $item->quantity);}?></p></td>
 			<td><?php echo auto_typography($item->work_description);?></td>
-			<td><p><?php echo $this->settings_model->get_setting('currency_symbol') . str_replace('.', $this->config->item('currency_decimal'), $item->amount);?> <?php if ($item->taxable == 0){echo '(' . $this->lang->line('invoice_not_taxable') . ')';}?></p></td>
-			<td><p><?php echo $this->settings_model->get_setting('currency_symbol') . number_format($item->quantity * $item->amount, 2, $this->config->item('currency_decimal'), '');?></p></td>
+			<td><p><?php echo formatNumber($item->amount, TRUE);?> <?php if ($item->taxable == 0){echo '(' . $this->lang->line('invoice_not_taxable') . ')';}?></p></td>
+			<td><p><?php echo formatNumber($item->quantity * $item->amount, TRUE);?></p></td>
 		</tr>
 		<?php endforeach;?>
 	</table>
@@ -237,7 +237,7 @@ if ($row->amount_paid < $row->total_with_tax):
 					echo $this->lang->line('cal_' . strtolower(date('F', mysql_to_unix($row->date_paid))));
 					// day and year numbers
 					echo date(' j, Y', mysql_to_unix($row->date_paid));
-					?> : <?php echo $this->settings_model->get_setting('currency_symbol') . $row->amount_paid;?>. <em>&quot;<?php echo ($row->payment_note=="0")?'There was no payment note entered':$row->payment_note;?>&quot;</em>
+					?> : <?php echo formatNumber($row->amount_paid, TRUE); ?>. <em>&quot;<?php echo ($row->payment_note=="0")?'There was no payment note entered':$row->payment_note;?>&quot;</em>
 				</li>
 			<?php
 				endforeach;

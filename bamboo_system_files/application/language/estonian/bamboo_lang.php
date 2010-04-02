@@ -108,6 +108,7 @@ $lang['invoice_invoice_delete_success'] = 'Arve edukalt kustutatud';
 $lang['invoice_invoice_edit_success'] = 'Arve edukalt muudetud';
 $lang['invoice_is_tax_exempt'] = 'maksuvabastus';
 $lang['invoice_item'] = 'Item'; // to be translated
+$lang['invoice_item_total'] = 'Total'; // TO BE TRANSLATED
 $lang['invoice_last_used'] = 'viimane number kasutatud ';
 $lang['invoice_new_item'] = 'New Item'; // to be translated
 $lang['invoice_new_invoice'] = 'Uus Arve';

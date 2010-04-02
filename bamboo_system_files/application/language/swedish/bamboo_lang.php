@@ -104,6 +104,7 @@ $lang['invoice_invoice_delete_success'] = 'Fakturan Ta bortd';
 $lang['invoice_invoice_edit_success'] = 'Fakturan redigerad';
 $lang['invoice_is_tax_exempt'] = 'är momsfria';
 $lang['invoice_item'] = 'Item'; // to be translated
+$lang['invoice_item_total'] = 'Total'; // TO BE TRANSLATED
 $lang['invoice_last_used'] = 'senast använda nummer ';
 $lang['invoice_new_item'] = 'New Item'; // to be translated
 $lang['invoice_new_invoice'] = 'Ny Faktura';

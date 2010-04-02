@@ -100,6 +100,7 @@ $lang['invoice_invoice_delete_success'] = 'Facture supprimée avec succès';
 $lang['invoice_invoice_edit_success'] = 'Facture modifiée avec succès';
 $lang['invoice_is_tax_exempt'] = 'est exempt de taxes';
 $lang['invoice_item'] = 'Item'; // to be translated
+$lang['invoice_item_total'] = 'Total'; // TO BE TRANSLATED
 $lang['invoice_last_used'] = 'dernier numéro utilisé ';
 $lang['invoice_new_item'] = 'New Item'; // to be translated
 $lang['invoice_new_invoice'] = 'Nouvelle facture';

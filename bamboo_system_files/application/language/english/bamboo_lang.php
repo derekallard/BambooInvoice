@@ -107,6 +107,7 @@ $lang['invoice_invoice_delete_success'] = 'Invoice successfully deleted';
 $lang['invoice_invoice_edit_success'] = 'Invoice successfully edited';
 $lang['invoice_is_tax_exempt'] = 'is tax exempt';
 $lang['invoice_item'] = 'Item';
+$lang['invoice_item_total'] = 'Total';
 $lang['invoice_last_used'] = 'last number used ';
 $lang['invoice_new_item'] = 'New Item';
 $lang['invoice_new_invoice'] = 'New Invoice';

@@ -47,7 +47,7 @@ if (isset($total_rows) && $total_rows == 0):
 		<td><?php echo anchor('invoices/view/'.$row->id, $row->invoice_number);?></td>
 		<td><?php echo anchor('invoices/view/'.$row->id, $display_date);?></td>
 		<td class="cName"><?php echo anchor('invoices/view/'.$row->id, $row->name);?> <span class="short_description"><?php echo $short_description[$row->id]?></span></td>
-		<td><?php echo anchor('invoices/view/'.$row->id, $this->settings_model->get_setting('currency_symbol') . number_format($row->subtotal, 2, $this->config->item('currency_decimal'), ''));?></td>
+		<td><?php echo anchor('invoices/view/'.$row->id, formatNumber($row->subtotal, TRUE));?></td>
 		<td>
 		<?php
 		if ($row->amount_paid >= ($row->subtotal + .01))

@@ -101,6 +101,7 @@ $lang['invoice_export_to'] = 'Exportar a(s) factura(s) para';
 $lang['invoice_generated_by'] = 'Factura gerada por';
 $lang['invoice_history_comments'] = 'Hist&oacute;rico da factura &amp; notas internas';
 $lang['invoice_item'] = 'Item';
+$lang['invoice_item_total'] = 'Total'; // TO BE TRANSLATED
 $lang['invoice_invoice'] = 'Factura';
 $lang['invoice_new_item'] = 'Novo item';
 $lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 2010/1'; // TO BE TRANSLATED

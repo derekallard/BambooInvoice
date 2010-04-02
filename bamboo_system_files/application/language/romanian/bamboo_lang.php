@@ -96,6 +96,7 @@ $lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 
 $lang['invoice_invoice_delete_success'] = 'Factura a fost ştearsă';
 $lang['invoice_invoice_edit_success'] = 'Factura a fost modificată';
 $lang['invoice_item'] = 'Item'; // to be translated
+$lang['invoice_item_total'] = 'Total'; // TO BE TRANSLATED
 $lang['invoice_last_used'] = 'ultimul număr folosit ';
 $lang['invoice_new_item'] = 'New Item'; // to be translated
 $lang['invoice_new_invoice'] = 'Factură Nouă';

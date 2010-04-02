@@ -102,6 +102,7 @@ $lang['invoice_invalid_year_number'] = 'Invalid format. Should be, for example: 
 $lang['invoice_invoice_delete_success'] = 'Rechnung erfolgreich gel&ouml;scht';
 $lang['invoice_invoice_edit_success'] = 'Rechnung erfolgreich bearbeitet';
 $lang['invoice_item'] = 'Item'; // to be translated
+$lang['invoice_item_total'] = 'Total'; // TO BE TRANSLATED
 $lang['invoice_last_used'] = 'letzte benutzte Nummer ';
 $lang['invoice_new_item'] = 'New Item'; // to be translated
 $lang['invoice_new_invoice'] = 'Neue Rechnung';
