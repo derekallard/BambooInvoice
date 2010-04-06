@@ -235,6 +235,7 @@ $lang['settings_advanced_settings'] = 'Advanceret Indstillinger';
 
 $lang['settings_company_name'] = 'Firmanavn';
 $lang['settings_currency_symbol'] = 'Valuta Symbol';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Valuta Type';
 $lang['settings_days_payment_due'] = 'Dage indtil faktura forfald';
 $lang['settings_default_note'] = 'Standard Faktura Note';

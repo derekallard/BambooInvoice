@@ -235,6 +235,7 @@ $lang['settings_advanced_settings'] = 'Configuración avanzada';
 
 $lang['settings_company_name'] = 'Nombre de empresa';
 $lang['settings_currency_symbol'] = 'Símbolo de divisa';
+$lang['settings_currency_symbol_after'] = 'Símbolo de divisa después del número';
 $lang['settings_currency_type'] = 'Tipo de divisa';
 $lang['settings_days_payment_due'] = 'Días hasta vencimiento de factura';
 $lang['settings_default_note'] = 'Nota de factura por defecto';

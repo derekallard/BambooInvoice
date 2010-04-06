@@ -226,6 +226,7 @@ $lang['settings_invoice_settings'] = 'Paramètres de facture';
 $lang['settings_advanced_settings'] = 'Paramètres avancés';
 $lang['settings_company_name'] = 'Nom de compagnie';
 $lang['settings_currency_symbol'] = 'Symbole monétaire';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Identification de la devise';
 $lang['settings_days_payment_due'] = 'En souffrance après (en jours)';
 $lang['settings_default_note'] = 'Note par défaut pour les factures';

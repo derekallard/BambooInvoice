@@ -220,6 +220,7 @@ $lang['settings_advanced_settings'] = 'Setari Avansate'; // to be translated
 
 $lang['settings_company_name'] = 'Numele Companiei';
 $lang['settings_currency_symbol'] = 'Simbolul Valutei';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Tipul Valutei';
 $lang['settings_days_payment_due'] = 'Zile până la scadenţa facturii';
 $lang['settings_default_note'] = 'Notă de Facturare';

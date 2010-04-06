@@ -228,6 +228,7 @@ $lang['settings_advanced_settings'] = 'Uitgebreide Instellingen';
 
 $lang['settings_company_name'] = 'Bedrijfsnaam';
 $lang['settings_currency_symbol'] = 'Valuta symbool';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Valuta type';
 $lang['settings_days_payment_due'] = 'Betalingstermijn van de factuur';
 $lang['settings_default_note'] = 'Standaard factuurnotitie';

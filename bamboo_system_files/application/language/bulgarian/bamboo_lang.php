@@ -231,6 +231,7 @@ $lang['settings_advanced_settings'] = 'Advanced Settings'; // to be translated
 
 $lang['settings_company_name'] = 'Име на фирмата';
 $lang['settings_currency_symbol'] = 'Валутен символ';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Тип валута';
 $lang['settings_days_payment_due'] = 'Дни до задължение по фактура';
 $lang['settings_default_note'] = 'Фактурна бележка по подразбиране';

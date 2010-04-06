@@ -232,6 +232,7 @@ $lang['reports_yearly_income'] = 'Fatturato annuo';
 
 $lang['settings_company_name'] = 'Nome azienda';
 $lang['settings_currency_symbol'] = 'Simbolo della valuta';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Tipo divisa';
 $lang['settings_days_payment_due'] = 'Giorni alla scadenza della fattura';
 $lang['settings_default_note'] = 'Annotazione standard della fattura';

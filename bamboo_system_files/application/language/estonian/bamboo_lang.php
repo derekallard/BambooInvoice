@@ -236,6 +236,7 @@ $lang['settings_advanced_settings'] = 'T&auml;psemad Seadistused';
 
 $lang['settings_company_name'] = 'Firma Nimi';
 $lang['settings_currency_symbol'] = 'Valuuta S&uuml;mbol';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Valuuta';
 $lang['settings_days_payment_due'] = 'Kuna Arve peab olema tasutud';
 $lang['settings_default_note'] = 'Eelsisestatud m&auml;rge arvel';

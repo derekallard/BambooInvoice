@@ -235,6 +235,7 @@ $lang['settings_advanced_settings'] = 'Advanced Settings';
 
 $lang['settings_company_name'] = 'Company Name';
 $lang['settings_currency_symbol'] = 'Currency Symbol';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number';
 $lang['settings_currency_type'] = 'Currency Type';
 $lang['settings_days_payment_due'] = 'Days until invoice due';
 $lang['settings_default_note'] = 'Default Invoice Note';

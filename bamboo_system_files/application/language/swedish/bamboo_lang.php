@@ -231,6 +231,7 @@ $lang['settings_advanced_settings'] = 'Avancerade inställningar';
 
 $lang['settings_company_name'] = 'Företagsnamn';
 $lang['settings_currency_symbol'] = 'Valutasymbol';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Valutatyp';
 $lang['settings_days_payment_due'] = 'Dagar tills fakturan ska betalas';
 $lang['settings_default_note'] = 'Standardanmärkning på faktura';

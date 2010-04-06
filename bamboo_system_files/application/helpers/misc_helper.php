@@ -18,10 +18,18 @@ function formatNumber($amount = 0.00, $money = FALSE)
 
 	if ($money) {
 		$currency_symbol = $CI->settings_model->get_setting('currency_symbol');
+
+		if ($CI->settings_model->get_setting('currency_symbol_after') == 'y') {
+			$currency_symbol_a = $currency_symbol;
+			$currency_symbol_b = '';
+		} else {
+			$currency_symbol_b = $currency_symbol;
+			$currency_symbol_a = '';
+		}
 	} else {
-		$currency_symbol = '';
+		$currency_symbol_b = $currency_symbol_a = '';
 	}
 
-	return $currency_symbol . number_format($amount, 2, $currency_decimal, '');
+	return $currency_symbol_b . number_format($amount, 2, $currency_decimal, '') . $currency_symbol_a;
 }
 ?>

@@ -234,6 +234,7 @@ $lang['settings_advanced_settings'] = 'Avan&ccedil;adas';
 
 $lang['settings_company_name'] = 'Nome da empresa';
 $lang['settings_currency_symbol'] = 'S&iacute;mbolo da moeda';
+$lang['settings_currency_symbol_after'] = 'Currency Symbol after number'; // to be translated
 $lang['settings_currency_type'] = 'Abreviatura da moeda';
 $lang['settings_days_payment_due'] = 'Prazo de pagamento';
 $lang['settings_default_note'] = 'Nota padr&atilde;o da factura';
