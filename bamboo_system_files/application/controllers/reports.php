@@ -5,7 +5,7 @@ class Reports extends MY_Controller {
 	function Reports()
 	{
 		parent::MY_Controller();
-		$this->load->helper(array('date', 'text'));
+		$this->load->helper(array('date', 'text', 'misc'));
 		$this->load->library('pagination');
 		$this->load->library('table');
 		$this->load->model('invoices_model');
@@ -144,7 +144,7 @@ class Reports extends MY_Controller {
 		$date_error = (date("Y", $start_date_timestamp) == '1969' OR date("Y", $end_date_timestamp) == '1969') ? TRUE : FALSE;
 
 		// sanity checks
-		$data['report_dates'] = 'Report for ' . date("Y-m-d", $start_date_timestamp) . ' to ' . date("Y-m-d", $end_date_timestamp);
+		$data['report_dates'] = 'Report for ' . date($this->config->item('invoice_date_format'), $start_date_timestamp) . ' to ' . date($this->config->item('invoice_date_format'), $end_date_timestamp);
 
 		$detailed_data = $this->reports_model->getDetailedData($start_date, $end_date);
 		$detailed_data_summary = $this->reports_model->getSummaryData($start_date, $end_date);
