@@ -35,7 +35,7 @@ $lang['clients_delete_all_invoices'] = 'Изтрий клиента и всич�
 $lang['clients_delete_client'] = 'Изтрий Клиент';
 $lang['clients_delete_contact'] = 'Изтрий Контакт';
 $lang['clients_deleted'] = 'Клиентът е успешно изтрит';
-$lang['clients_deleted_error'] = 'Клиентът не може да бъде изтрит'; 
+$lang['clients_deleted_error'] = 'Клиентът не може да бъде изтрит';
 $lang['clients_edit_client'] = 'Редактирай Клиент';
 $lang['clients_edit_contact'] = 'Редактирай Контакт';
 $lang['clients_edited'] = 'Клиента е успешно променен';
@@ -205,7 +205,7 @@ $lang['menu_roadmap'] = 'План';
 $lang['menu_root_system'] = 'Главна Система';
 $lang['menu_see_also'] = 'Виж Още';
 $lang['menu_settings'] = 'Настройки';
-$lang['menu_utilties'] = 'Приспособления';
+$lang['menu_utilities'] = 'Приспособления';
 
 $lang['notice_english_only'] = 'Available in English Only'; // to be translated
 $lang['notice_generated_by'] = 'Създадено от';

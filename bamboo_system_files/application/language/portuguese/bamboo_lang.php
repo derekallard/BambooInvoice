@@ -208,7 +208,7 @@ $lang['menu_roadmap'] = 'Planos para o futuro';
 $lang['menu_root_system'] = 'Menu principal';
 $lang['menu_see_also'] = 'Ver tamb&eacute;m';
 $lang['menu_settings'] = 'Defini&ccedil;&otilde;es';
-$lang['menu_utilties'] = 'Utilit&aacute;rios';
+$lang['menu_utilities'] = 'Utilit&aacute;rios';
 
 $lang['notice_english_only'] = 'Available in English Only'; // to be translated
 $lang['notice_generated_by'] = 'Gerado por';

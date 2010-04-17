@@ -207,7 +207,7 @@ $lang['menu_roadmap'] = 'Roadmap';
 $lang['menu_root_system'] = 'Hauptmen&uuml;';
 $lang['menu_see_also'] = 'Ebenfalls interessant';
 $lang['menu_settings'] = 'Einstellungen';
-$lang['menu_utilties'] = 'Utilities';
+$lang['menu_utilities'] = 'Utilities';
 
 $lang['notice_english_only'] = 'Available in English Only'; // to be translated
 $lang['notice_generated_by'] = 'Erstellt mit';

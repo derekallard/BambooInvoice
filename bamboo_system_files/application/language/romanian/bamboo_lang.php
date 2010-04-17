@@ -196,7 +196,7 @@ $lang['menu_roadmap'] = 'Hartă';
 $lang['menu_root_system'] = 'Sistem de bază';
 $lang['menu_see_also'] = 'Vezi de asemenea';
 $lang['menu_settings'] = 'Setări';
-$lang['menu_utilties'] = 'Utilities'; // TO BE TRANSLATED
+$lang['menu_utilities'] = 'Utilities'; // TO BE TRANSLATED
 
 $lang['notice_english_only'] = 'Available in English Only'; // to be translated
 $lang['notice_generated_by'] = 'Generată de';

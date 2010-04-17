@@ -35,7 +35,7 @@ $lang['clients_delete_all_invoices'] = 'Ta bort kund och alla fakturor';
 $lang['clients_delete_client'] = 'Ta bort Kund';
 $lang['clients_delete_contact'] = 'Ta bort Kontakt';
 $lang['clients_deleted'] = 'Kunden raderad';
-$lang['clients_deleted_error'] = 'Det gick inte att ta bort kunden'; 
+$lang['clients_deleted_error'] = 'Det gick inte att ta bort kunden';
 $lang['clients_edit_client'] = 'Redigera Kund';
 $lang['clients_edit_contact'] = 'Redigera Kontakt';
 $lang['clients_edited'] = 'Kund uppdaterad';
@@ -205,7 +205,7 @@ $lang['menu_roadmap'] = 'Roadmap';
 $lang['menu_root_system'] = 'Rotsystem';
 $lang['menu_see_also'] = 'Se även';
 $lang['menu_settings'] = 'Inställningar';
-$lang['menu_utilties'] = 'Extras';
+$lang['menu_utilities'] = 'Extras';
 
 $lang['notice_english_only'] = 'Available in English Only'; // to be translated
 $lang['notice_generated_by'] = 'Genererad av';
@@ -225,7 +225,7 @@ $lang['reports_year_to_date'] = 'Från årets början';
 $lang['reports_no_data'] = 'There is no data available for those dates.'; // to be translated
 $lang['reports_yearly_income'] = 'Årsvis Resultaträkningar';
 
-$lang['settings_account_settings'] = 'Kontoinställningar'; 
+$lang['settings_account_settings'] = 'Kontoinställningar';
 $lang['settings_invoice_settings'] = 'Fakturainställningar';
 $lang['settings_advanced_settings'] = 'Avancerade inställningar';
 
@@ -255,18 +255,18 @@ $lang['utilities_download_backup'] = 'Download backup';
 $lang['utilities_automatic_version_check'] = 'Kontrollera automatiskt om det finns en nyare version';
 $lang['utilities_phpinfo'] = 'PHP information';
 $lang['utilities_phpinfo_not_available'] = 'Den här funktionen finns inte i demot.';
-$lang['utilities_new_version_available'] = "En ny version of BambooInvoice är nu tillgänglig. "; 
+$lang['utilities_new_version_available'] = "En ny version of BambooInvoice är nu tillgänglig. ";
 $lang['utilities_up_to_date'] = "Du har den senaste versionen av BambooInvoice.";
 $lang['utilities_connection_failed'] = "Det gick inte att ansluta till http://bambooinvoice.org.";
 $lang['utilities_version_check'] = "Leta efter uppdateringar";
-$lang['utilities_version_undetermined'] = "Versionstatus kunde inte fastställas."; 
+$lang['utilities_version_undetermined'] = "Versionstatus kunde inte fastställas.";
 
 $lang['menu_did_you_know_quotes'] = array(
 										'BambooINVOICE har forum på forums.bambooinvoice.org för support, funktionen begäran och chat.',
 										'BambooINVOICE är släppt under GPL-licens.',
 										'Dina inställningar kan ändras när som helst via menyn Inställningar.',
 										'Hjälperfiler förnyas varje dag. Besök BambooINVOICE.org för den senaste versionen!',
-										'Du kan skapa en ny klient från Kunder-menyn eller precis innan du skapar en faktura!', 
+										'Du kan skapa en ny klient från Kunder-menyn eller precis innan du skapar en faktura!',
 										'En enda planta av bambu från ett etablerat rotsystem når vanligtvis full höjd på bara ett år!',
 										'Bambuplantans livslängd har gjort den till en kinesisk symbol för långt liv, och i Indien en symbol för vänskap.'
 					);

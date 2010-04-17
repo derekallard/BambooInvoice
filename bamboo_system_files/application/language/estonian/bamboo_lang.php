@@ -35,7 +35,7 @@ $lang['clients_delete_all_invoices'] = 'Kustuta firma ja k&otilde;ik sellega seo
 $lang['clients_delete_client'] = 'Kustuta Firma';
 $lang['clients_delete_contact'] = 'Kustuta Kontakt';
 $lang['clients_deleted'] = 'Firma edukalt kustutatud';
-$lang['clients_deleted_error'] = 'Firma andmeid ei saanud kustutada'; 
+$lang['clients_deleted_error'] = 'Firma andmeid ei saanud kustutada';
 
 $lang['clients_edit_client'] = 'Muuda Firma andmeid';
 $lang['clients_edit_contact'] = 'Muuda Kontakti';
@@ -210,7 +210,7 @@ $lang['menu_roadmap'] = 'Kuhu edasi';
 $lang['menu_root_system'] = 'Valikud';
 $lang['menu_see_also'] = 'Vaata ka';
 $lang['menu_settings'] = 'S&auml;tted';
-$lang['menu_utilties'] = 'Tarvikud';
+$lang['menu_utilities'] = 'Tarvikud';
 
 $lang['notice_english_only'] = 'Available in English Only'; // to be translated
 $lang['notice_generated_by'] = 'Arve loodud';

@@ -35,7 +35,7 @@ $lang['clients_delete_all_invoices'] = 'Cancella il cliente e tutte le sue fattu
 $lang['clients_delete_client'] = 'Cancella cliente';
 $lang['clients_delete_contact'] = 'Cancella contatto';
 $lang['clients_deleted'] = 'Cliente cancellato';
-$lang['clients_deleted_error'] = 'Impossibile cancellare il cliente'; 
+$lang['clients_deleted_error'] = 'Impossibile cancellare il cliente';
 $lang['clients_edit_client'] = 'Modifica cliente';
 $lang['clients_edit_contact'] = 'Modifica contatto';
 $lang['clients_edited'] = 'Cliente modificato';
@@ -210,7 +210,7 @@ $lang['menu_roadmap'] = 'Roadmap';
 $lang['menu_root_system'] = 'Menu principale';
 $lang['menu_see_also'] = 'Vedi anche';
 $lang['menu_settings'] = 'Configura';
-$lang['menu_utilties'] = 'Utilit&agrave;';
+$lang['menu_utilities'] = 'Utilit&agrave;';
 
 $lang['notice_english_only'] = 'Available in English Only'; // to be translated
 $lang['notice_generated_by'] = 'Creata con';

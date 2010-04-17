@@ -35,7 +35,7 @@ $lang['clients_delete_all_invoices'] = 'Slet klient og alle tilhørende faktura'
 $lang['clients_delete_client'] = 'Slet Klient';
 $lang['clients_delete_contact'] = 'Slet Kontaktperson';
 $lang['clients_deleted'] = 'Klient er blevet slettet';
-$lang['clients_deleted_error'] = 'Klienten kunne ikke slettes'; 
+$lang['clients_deleted_error'] = 'Klienten kunne ikke slettes';
 $lang['clients_edit_client'] = 'Rediger Klient';
 $lang['clients_edit_contact'] = 'Rediger Kontaktperson';
 $lang['clients_edited'] = 'Klienten er blevet redigeret';
@@ -209,7 +209,7 @@ $lang['menu_roadmap'] = 'Roadmap';
 $lang['menu_root_system'] = 'Root System';
 $lang['menu_see_also'] = 'Se også';
 $lang['menu_settings'] = 'Indstillinger';
-$lang['menu_utilties'] = 'Værktøjer';
+$lang['menu_utilities'] = 'Værktøjer';
 
 $lang['notice_english_only'] = 'Available in English Only'; // to be translated
 $lang['notice_generated_by'] = 'Genereret af';

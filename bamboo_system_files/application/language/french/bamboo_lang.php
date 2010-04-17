@@ -147,7 +147,7 @@ $lang['invoice_work_description'] = 'Description du travail';
 $lang['invoice_you_may_now'] = 'Vous pouvez maintenant';
 $lang['invoice_you'] = 'You';
 
-$lang['login_allow_login'] = 'Ajouter un nouveau compte administrateur'; 
+$lang['login_allow_login'] = 'Ajouter un nouveau compte administrateur';
 $lang['login_caps_lock'] = 'Assurez vous que votre bouton <em>MAJUSCULES</em> n\'est pas enfoncé';
 $lang['login_forgot_password'] = 'Mot de passe oublié';
 $lang['login_login'] = 'Authentification';
@@ -201,9 +201,9 @@ $lang['menu_roadmap'] = 'Évolution';
 $lang['menu_root_system'] = 'Racine';
 $lang['menu_see_also'] = 'Voyez aussi';
 $lang['menu_settings'] = 'Paramètres';
-$lang['menu_utilties'] = 'Utilities';
+$lang['menu_utilities'] = 'Utilities';
 
-$lang['notice_english_only'] = 'Disponible en anglais seulement'; 
+$lang['notice_english_only'] = 'Disponible en anglais seulement';
 $lang['notice_generated_by'] = 'Généré par';
 
 $lang['reports_back_to_reports'] = 'retourner aux rapports';
@@ -240,7 +240,7 @@ $lang['settings_primary_email'] = 'Courriel contact primaire';
 $lang['settings_primary_email_message'] = 'Changing this email will also change the email you use to login with.'; // TO BE TRANSLATED
 $lang['settings_save_settings'] = 'Sauvegarder les paramètres';
 $lang['settings_save_invoices'] = 'Sauvegarder Facture';
-$lang['settings_save_invoices_warning'] = '<strong>Attention:</strong> Décocher ce paramètrage supprimera toutes factures actuellement sauvegardées.'; 
+$lang['settings_save_invoices_warning'] = '<strong>Attention:</strong> Décocher ce paramètrage supprimera toutes factures actuellement sauvegardées.';
 $lang['settings_settings_default'] = 'Ces paramètres sont les valeurs par défaut';
 $lang['settings_short_language'] = 'fr';
 $lang['settings_tax_code'] = 'Votre numéro de taxe';
