@@ -35,7 +35,7 @@ if ($row->amount_paid < $row->total_with_tax):
 
 		<p id="date_paid_container">
 			<label>
-				<?php echo $this->lang->line('invoice_date_paid_full');?> 
+				<?php echo $this->lang->line('invoice_date_paid_full');?>
 				<input type="text" name="date_paid" id="date_paid" value="<?php echo $invoiceDate; ?>"/>
 			</label>
 		</p>
@@ -46,9 +46,9 @@ if ($row->amount_paid < $row->total_with_tax):
 
 		<p>
 			<label>
-				<span><?php echo $this->lang->line('invoice_amount');?></span> 
-				<?php echo $this->settings_model->get_setting('currency_symbol');?> 
-				<input type="text" name="amount" id="amount" maxlength="10" size="10" /> 
+				<span><?php echo $this->lang->line('invoice_amount');?></span>
+				<?php echo $this->settings_model->get_setting('currency_symbol');?>
+				<input type="text" name="amount" id="amount" maxlength="10" size="10" />
 			</label><span id="amountError" class="error"></span>
 		</p>
 
@@ -99,7 +99,7 @@ if ($row->amount_paid < $row->total_with_tax):
 				</p>
 
 				<p>
-					<span class="error" id="emailError"></span> 
+					<span class="error" id="emailError"></span>
 					<input type="submit" name="sendEmail" id="sendEmail" value="<?php echo $this->lang->line('menu_email_invoice');?>" /> <input onclick="Effect.BlindUp('emailInvoice', {duration: '0.4'});" type="reset" value="<?php echo $this->lang->line('actions_cancel');?>" name="close" id="close" />
 				</p>
 
@@ -112,7 +112,7 @@ if ($row->amount_paid < $row->total_with_tax):
 	<div id="companyDetails">
 		<h2>
 			<?php if (isset($company_logo)) {echo $company_logo.'<br />';}?>
-			<?php echo $companyInfo->company_name;?> 
+			<?php echo $companyInfo->company_name;?>
 			<span><?php echo $this->lang->line('invoice_invoice');?></span>
 		</h2>
 
@@ -182,7 +182,7 @@ if ($row->amount_paid < $row->total_with_tax):
 	</p>
 
 	<p>
-		<strong><?php echo $this->lang->line('invoice_payment_term');?>: <?php echo $this->settings_model->get_setting('days_payment_due');?> <?php echo $this->lang->line('date_days');?></strong> 
+		<strong><?php echo $this->lang->line('invoice_payment_term');?>: <?php echo $this->settings_model->get_setting('days_payment_due');?> <?php echo $this->lang->line('date_days');?></strong>
 		(<?php echo $date_invoice_due;?>)
 	</p>
 
@@ -215,7 +215,7 @@ if ($row->amount_paid < $row->total_with_tax):
 					<?php endif; ?>
 
 				</div>
-		<?php 
+		<?php
 			endforeach;
 		endif; // ends if ($invoiceHistory->num_rows() ==0)
 		?>

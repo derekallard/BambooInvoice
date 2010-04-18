@@ -149,6 +149,7 @@ $lang['invoice_tax_status'] = 'Estado do imposto';
 $lang['invoice_taxable'] = 'Pass&iacute;vel de impostos';
 $lang['invoice_there_are_currently'] = 'Existem';
 $lang['invoice_total'] = 'Total';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Descri&ccedil;&atilde;o do trabalho';
 $lang['invoice_you_may_now'] = 'Agora pode';
 $lang['invoice_you'] = 'Voc&ecirc;';

@@ -146,6 +146,7 @@ $lang['invoice_tax_status'] = 'Данъчен Статус';
 $lang['invoice_taxable'] = 'Подлежи на облагане с данъци';
 $lang['invoice_there_are_currently'] = 'Текущо има';
 $lang['invoice_total'] = 'Всичко';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Описание на Работа';
 $lang['invoice_you_may_now'] = 'Сега можеш да';
 $lang['invoice_you'] = 'You';

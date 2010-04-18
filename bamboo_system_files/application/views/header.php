@@ -15,18 +15,18 @@ header('Content-Type: text/html; Charset=UTF-8');
 */
 echo 'Bam'.'boo'.'In'.'voice'; // this is like this so that nobody can get it by a search and replace
 /**
-	Several times now I've had people take my work, strip out the word "bamboo" and rename it something else - then 
-	claim they have written their own "invoicing software".  As a developer, this sucks.  Usually its a dumb search 
+	Several times now I've had people take my work, strip out the word "bamboo" and rename it something else - then
+	claim they have written their own "invoicing software".  As a developer, this sucks.  Usually its a dumb search
 	and replace, and they replace my name with their own.  Look, if you want to modify Bamboo, fine, but please don't
 	discount my work.  Leave my copyright in there.  Better yet, why not contact me and try to work something out.
-	My email is info@bambooinvoice.org, please use it.  I don't want to see more poor quality, half-supported forks 
+	My email is info@bambooinvoice.org, please use it.  I don't want to see more poor quality, half-supported forks
 	of BambooInvoice out there. If you must take Bamboo, please don't use my images.
-	
-	If you aren't redistributing or hosting Bamboo or other people, then please ignore everything you just read.  
+
+	If you aren't redistributing or hosting Bamboo or other people, then please ignore everything you just read.
 	For your own purposes, I ABSOLUTELY welcome and encourage you to modify things. Go nuts!  Tear it apart, see what
 	makes it tick and put it back together. Feel free to email me or ask the forums questions about "why".  I love that
 	stuff.  This is strictly about people taking my work, removing credit to me, and perverting it into something else. :)
-	
+
 	Thanks for your understanding!
 	Derek Allard (http://derekallard.com)
 */
@@ -113,7 +113,7 @@ lang_amount = new String("<?php echo ($this->lang->line('invoice_amount'));?>");
 			<?php if (isset($invoiceOptions)): ?>
 				<li id="invnoteli"><a class="invnote" href="javascript:void(0);" onclick="Effect.BlindDown('private_note_form', {duration: '0.4'});"><?php echo $this->lang->line('menu_private_note');?></a></li>
 
-				<?php if ($row->amount_paid < $row->total_with_tax): ?>
+				<?php if ($row->amount_paid != $row->total_with_tax): ?>
 					<li id="invpayli"><a class="invpayment" href="javascript:void(0);" onclick="Effect.BlindDown('enterPayment', {duration: '0.4'});"><?php echo $this->lang->line('menu_enter_payment');?></a></li>
 				<?php endif; ?>
 
@@ -122,7 +122,7 @@ lang_amount = new String("<?php echo ($this->lang->line('invoice_amount'));?>");
 				<li><?php echo anchor('invoices/pdf/' . $row->id, $this->lang->line('menu_generate_pdf'), array('class' => 'emailpdf'));?></li>
 				<li id="invprintli"><?php echo anchor('', $this->lang->line('menu_print_invoice'), array('class' => 'invprint', 'onclick' => 'print(); return false;'));?></li>
 
-				<?php if ($row->amount_paid < $row->total_with_tax): ?>
+				<?php if ($row->amount_paid != $row->total_with_tax): ?>
 					<li><?php echo anchor('invoices/edit/'.$row->id, $this->lang->line('menu_edit_invoice'), array('class' => 'invedit'));?></li>
 				<?php endif; ?>
 

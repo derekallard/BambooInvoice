@@ -53,7 +53,7 @@ class Invoices extends MY_Controller {
 		$data['total_rows'] = $data['query']->num_rows();
 		$config['base_url'] = site_url('invoices/overdue');
 		$config['total_rows'] = $this->invoices_model->getInvoices('overdue', $this->settings_model->get_setting('days_payment_due'), 0, 10000)->num_rows();
-		$this->pagination->initialize($config); 
+		$this->pagination->initialize($config);
 		$data['pagination'] = $this->pagination->create_links();
 
 		$data['status_menu'] = TRUE; // pass status_menu
@@ -75,7 +75,7 @@ class Invoices extends MY_Controller {
 
 		$config['base_url'] = site_url('invoices/open');
 		$config['total_rows'] = $this->invoices_model->getInvoices('open', $this->settings_model->get_setting('days_payment_due'), 0, 10000)->num_rows();
-		$this->pagination->initialize($config); 
+		$this->pagination->initialize($config);
 		$data['pagination'] = $this->pagination->create_links();
 
 		$data['status_menu'] = TRUE; // pass status_menu
@@ -97,7 +97,7 @@ class Invoices extends MY_Controller {
 
 		$config['base_url'] = site_url('invoices/closed');
 		$config['total_rows'] = $this->invoices_model->getInvoices('closed', $this->settings_model->get_setting('days_payment_due'), 0, 10000)->num_rows();
-		$this->pagination->initialize($config); 
+		$this->pagination->initialize($config);
 		$data['pagination'] = $this->pagination->create_links();
 
 		$data['status_menu'] = TRUE; // pass status_menu
@@ -118,7 +118,7 @@ class Invoices extends MY_Controller {
 
 		$config['total_rows'] = $this->invoices_model->getInvoices('all', $this->settings_model->get_setting('days_payment_due'), 0, 10000)->num_rows();
 		$config['base_url'] = site_url('invoices/all');
-		$this->pagination->initialize($config); 
+		$this->pagination->initialize($config);
 		$data['pagination'] = $this->pagination->create_links();
 
 		$data['status_menu'] = TRUE; // pass status_menu
@@ -293,10 +293,14 @@ class Invoices extends MY_Controller {
 		$data['date_invoice_issued'] = formatted_invoice_date($data['row']->dateIssued);
 		$data['date_invoice_due'] = formatted_invoice_date($data['row']->dateIssued, $this->settings_model->get_setting('days_payment_due'));
 
-		if ($data['row']->amount_paid >= $data['row']->total_with_tax)
+		if ($data['row']->amount_paid == $data['row']->total_with_tax)
 		{
 			// paid invoices
 			$data['status'] = '<span>'.$this->lang->line('invoice_closed').'</span>';
+		}
+		elseif ($data['row']->amount_paid > $data['row']->total_with_tax) {
+			// invoices with credit
+			$data['status'] = '<span>'.$this->lang->line('invoice_with_credit').'</span>';
 		}
 		elseif (mysql_to_unix($data['row']->dateIssued) >= time()-($this->settings_model->get_setting('days_payment_due') * 60*60*24))
 		{
@@ -306,7 +310,7 @@ class Invoices extends MY_Controller {
 		else
 		{
 			// owing more then 30 days
-			$due_date = $data['row']->dateIssued + ($this->settings_model->get_setting('days_payment_due') * 60*60*24); 
+			$due_date = $data['row']->dateIssued + ($this->settings_model->get_setting('days_payment_due') * 60*60*24);
 			$data['status'] = '<span class="error">'.timespan(mysql_to_unix($data['row']->dateIssued) + ($this->settings_model->get_setting('days_payment_due') * 60*60*24), now()). ' '.$this->lang->line('invoice_overdue').'</span>';
 		}
 
@@ -690,7 +694,7 @@ class Invoices extends MY_Controller {
 			$this->email->cc(array_slice($recipient_emails, 1));
 		}
 
-		// should we blind copy the primary contact? 
+		// should we blind copy the primary contact?
 		if ($this->input->post('primary_contact') == 'y')
 		{
 			$this->email->bcc($data['companyInfo']->primary_contact_email);
@@ -704,7 +708,7 @@ class Invoices extends MY_Controller {
 		$this->email->attach("./invoices_temp/".$invoice_localized."_"."$invoice_number.pdf");
 
 		// for the demo, I don't want actual emails sent out, so this provides an easy
-		// override. 
+		// override.
 		if ($this->settings_model->get_setting('demo_flag') == 'n')
 		{
 			$this->email->send();
@@ -925,7 +929,7 @@ class Invoices extends MY_Controller {
 				else
 				{
 					// owing more then the overdue days amount
-					$due_date = $invoice_date + ($this->settings_model->get_setting('days_payment_due') * 60*60*24); 
+					$due_date = $invoice_date + ($this->settings_model->get_setting('days_payment_due') * 60*60*24);
 					$invoiceResults .= timespan($due_date, now()). ' '.$this->lang->line('invoice_overdue');
 				}
 
@@ -1082,5 +1086,5 @@ class Invoices extends MY_Controller {
 			return FALSE;
 		}
 	}
-} 
+}
 ?>

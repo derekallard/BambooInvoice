@@ -22,11 +22,11 @@ if (isset($total_rows) && $total_rows == 0):
 	</tr>
 <?php
  else:
- 
+
 	$last_retrieved_month = 0;
 	$display_month = TRUE; // for later use in a setting preference
 
-	foreach($query->result() as $row): 
+	foreach($query->result() as $row):
 
 		$invoice_date = mysql_to_unix($row->dateIssued);
 		if ($last_retrieved_month != date('F', $invoice_date) && $display_month):
@@ -36,8 +36,8 @@ if (isset($total_rows) && $total_rows == 0):
 		<td colspan="5" class="monthbreak"><?php echo date('F', $invoice_date);?></td>
 	</tr>
 
-<?php 
-		endif; 
+<?php
+		endif;
 		$last_retrieved_month = date('F', $invoice_date);
 		// localized month
 		$display_date = formatted_invoice_date($row->dateIssued);
@@ -50,23 +50,27 @@ if (isset($total_rows) && $total_rows == 0):
 		<td><?php echo anchor('invoices/view/'.$row->id, formatNumber($row->subtotal, TRUE));?></td>
 		<td>
 		<?php
-		if ($row->amount_paid >= ($row->subtotal + .01))
+		if ($row->amount_paid == $row->subtotal)
 		{
-		// paid invoices
-		echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_closed'), array('title' => 'invoice status'));
+			// paid invoices
+			echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_closed'), array('title' => 'invoice status'));
 		}
-		elseif (mysql_to_unix($row->dateIssued) >= strtotime('-'.$this->settings_model->get_setting('days_payment_due'). ' days')) 
+		elseif ($row->amount_paid > $row->subtotal) {
+			// invoices with credit.
+			echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_with_credit'), array('title' => 'invoice status'));
+		}
+		elseif (mysql_to_unix($row->dateIssued) >= strtotime('-'.$this->settings_model->get_setting('days_payment_due'). ' days'))
 		{
-		// owing less then the overdue days amount
-		echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_open'), array('title' => 'invoice status'));
+			// owing less then the overdue days amount
+			echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_open'), array('title' => 'invoice status'));
 		}
 		else
-		{ 
-		// owing more then the overdue days amount
-		// convert days due into a timestamp, and add the days payement is due in seconds
-		$due_date = mysql_to_unix($row->dateIssued) + ($this->settings_model->get_setting('days_payment_due') * 60*60*24); 
-		$line = "<span class='error'>" . timespan($due_date, now()) . ' '.$this->lang->line('invoice_overdue').'</span>';
-		echo anchor('invoices/view/'.$row->id, $line, array('title' => 'invoice status'));
+		{
+			// owing more then the overdue days amount
+			// convert days due into a timestamp, and add the days payement is due in seconds
+			$due_date = mysql_to_unix($row->dateIssued) + ($this->settings_model->get_setting('days_payment_due') * 60*60*24);
+			$line = "<span class='error'>" . timespan($due_date, now()) . ' '.$this->lang->line('invoice_overdue').'</span>';
+			echo anchor('invoices/view/'.$row->id, $line, array('title' => 'invoice status'));
 		}
 		?>
 		</td>

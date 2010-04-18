@@ -151,6 +151,7 @@ $lang['invoice_tax_status'] = 'Maksu kohuslus';
 $lang['invoice_taxable'] = 'Maksustatav';
 $lang['invoice_there_are_currently'] = 'Praegu on';
 $lang['invoice_total'] = 'Kokku';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Selgitus';
 $lang['invoice_you_may_now'] = 'Sa v&otilde;id n&uuml;&uuml;d';
 $lang['invoice_you'] = 'Sina';

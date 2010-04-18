@@ -146,6 +146,7 @@ $lang['invoice_tax_status'] = 'Steuerstatus';
 $lang['invoice_taxable'] = 'steuerbar';// Again 'controllable'? Needs better translation.
 $lang['invoice_there_are_currently'] = 'Es gibt momentan';
 $lang['invoice_total'] = 'Insgesamt';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Auftragsbeschreibung';
 $lang['invoice_you_may_now'] = 'Sie k&ouml;nnen nun';
 $lang['invoice_is_tax_exempt'] = 'ist nicht steuerbar';  //Same problem as above.

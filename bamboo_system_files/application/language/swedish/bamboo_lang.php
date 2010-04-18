@@ -147,6 +147,7 @@ $lang['invoice_tax_status'] = 'Momsstatus';
 $lang['invoice_taxable'] = 'Beskattningsbar';
 $lang['invoice_there_are_currently'] = 'Det är för närvarande';
 $lang['invoice_total'] = 'Totalt';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Arbetsbeskrivning';
 $lang['invoice_you_may_now'] = 'Du kan nu';
 $lang['invoice_you'] = 'You';

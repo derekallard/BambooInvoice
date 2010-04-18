@@ -143,6 +143,7 @@ $lang['invoice_tax_status'] = 'Belasting status';
 $lang['invoice_taxable'] = 'Belastbaar';
 $lang['invoice_there_are_currently'] = 'Er zijn op dit moment';
 $lang['invoice_total'] = 'Totaal';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Geleverde diensten en/of goederen';
 $lang['invoice_you_may_now'] = 'U kunt nu';
 $lang['invoice_you'] = 'You';

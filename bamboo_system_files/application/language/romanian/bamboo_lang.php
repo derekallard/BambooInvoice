@@ -138,6 +138,7 @@ $lang['invoice_tax_status'] = 'Statutul taxei';
 $lang['invoice_taxable'] = 'Taxabil/ă';
 $lang['invoice_there_are_currently'] = 'La momentul de faţa există';
 $lang['invoice_total'] = 'Total';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Descrierea Muncii';
 $lang['invoice_you_may_now'] = 'Acum puteţi să';
 $lang['invoice_you'] = 'You';

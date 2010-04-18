@@ -150,6 +150,7 @@ $lang['invoice_tax_status'] = 'Estatus impositivo';
 $lang['invoice_taxable'] = 'Lleva carga fiscal';
 $lang['invoice_there_are_currently'] = 'Actualmente hay';
 $lang['invoice_total'] = 'Total';
+$lang['invoice_with_credit'] = 'Con crédito';
 $lang['invoice_work_description'] = 'Concepto';
 $lang['invoice_you_may_now'] = 'Quizás sepas';
 $lang['invoice_you'] = 'You';

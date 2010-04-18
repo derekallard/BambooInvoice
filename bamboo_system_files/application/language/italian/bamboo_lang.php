@@ -151,6 +151,7 @@ $lang['invoice_tax_status'] = 'Stato tasse';
 $lang['invoice_taxable'] = 'Tassabile';
 $lang['invoice_there_are_currently'] = 'Numero fatture: ';
 $lang['invoice_total'] = 'Totale';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Descrizione lavoro';
 $lang['invoice_you_may_now'] = 'Ora puoi';
 $lang['invoice_you'] = 'Tu';

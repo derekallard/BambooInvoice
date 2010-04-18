@@ -150,6 +150,7 @@ $lang['invoice_tax_status'] = 'Skattemæssig status';
 $lang['invoice_taxable'] = 'Afgiftspligtig';
 $lang['invoice_there_are_currently'] = 'Der er i øjeblikket';
 $lang['invoice_total'] = 'Total';
+$lang['invoice_with_credit'] = 'With credit'; // to be translated
 $lang['invoice_work_description'] = 'Beskrivelse';
 $lang['invoice_you_may_now'] = 'Du kan nu';
 $lang['invoice_you'] = 'Du';
