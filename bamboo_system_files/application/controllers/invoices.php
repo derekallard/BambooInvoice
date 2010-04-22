@@ -1000,7 +1000,7 @@ class Invoices extends MY_Controller {
 	function _validation()
 	{
 		$rules['client_id'] 		= 'required|numeric';
-		$rules['invoice_number'] 	= 'trim|required|htmlspecialchars|max_length[12]|callback_validateInvoice';
+		$rules['invoice_number'] 	= 'trim|required|htmlspecialchars|max_length[12]|callback_validateUniqueInvoice';
 		$rules['dateIssued'] 		= 'trim|htmlspecialchars|callback_dateIssued';
 		$rules['invoice_note'] 		= 'trim|htmlspecialchars|max_length[2000]';
 		$rules['tax1_description'] 	= 'trim|htmlspecialchars|max_length[50]';
@@ -1049,13 +1049,20 @@ class Invoices extends MY_Controller {
 		$this->validation->set_error_delimiters('<span class="error">', '</span>');
 	}
 
-	function validateInvoice()
+	function validateUniqueInvoice()
 	{
 		$re = $this->uniqueInvoice();
 		if (! $re) {
 			return $re;
 		}
 
+		$re = $this->validateInvoice();
+
+		return $re;
+	}
+
+	function validateInvoice()
+	{
 		switch ($this->config->item('invoice_number_format')) {
 			case 'year_number':
 				$re = $this->validateInvoiceYearNumber();
@@ -1071,7 +1078,7 @@ class Invoices extends MY_Controller {
 
 	function uniqueInvoice()
 	{
-		$this->validation->set_message('validateInvoice', $this->lang->line('invoice_not_unique'));
+		$this->validation->set_message('validateUniqueInvoice', $this->lang->line('invoice_not_unique'));
 
 		return $this->invoices_model->uniqueInvoiceNumber($this->input->post('invoice_number'));
 	}
