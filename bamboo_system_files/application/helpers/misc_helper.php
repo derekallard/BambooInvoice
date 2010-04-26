@@ -17,6 +17,7 @@ function formatNumber($amount = 0.00, $money = FALSE)
 	$currency_decimal = $CI->config->item('currency_decimal');
 
 	if ($money) {
+		$currency_thousands = $CI->config->item('currency_thousands');
 		$currency_symbol = $CI->settings_model->get_setting('currency_symbol');
 
 		if ($CI->settings_model->get_setting('currency_symbol_after') == 'y') {
@@ -30,6 +31,6 @@ function formatNumber($amount = 0.00, $money = FALSE)
 		$currency_symbol_b = $currency_symbol_a = '';
 	}
 
-	return $currency_symbol_b . number_format($amount, 2, $currency_decimal, '') . $currency_symbol_a;
+	return $currency_symbol_b . number_format($amount, 2, $currency_decimal, $currency_thousands) . $currency_symbol_a;
 }
 ?>
