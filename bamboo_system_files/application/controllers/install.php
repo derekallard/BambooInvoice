@@ -213,7 +213,6 @@ class Install extends Controller {
 			'invoice_note_default' 	=> array('type' => 'VARCHAR', 'constraint' => 255),
 			'currency_type' 		=> array('type' => 'VARCHAR', 'constraint' => 20),
 			'currency_symbol'		=> array('type' => 'VARCHAR', 'constraint' => 9, 'default' => '$'),
-			'currency_symbol_after'		=> array('type' => 'CHAR', 'constraint' => 1, 'default' => 'n'),
 			'tax_code' 				=> array('type' => 'VARCHAR', 'constraint' => 50),
 			'tax1_desc' 			=> array('type' => 'VARCHAR', 'constraint' => 50),
 			'tax1_rate'				=> array('type' => 'FLOAT', 'constraint' => '6,3', 'default' => 0),
@@ -262,7 +261,7 @@ class Install extends Controller {
 
 		$version = $this->db->get('settings')->row()->bambooinvoice_version;
 
-		if ($version == '0.8.0' OR $version == '0.8.1' OR $version == '0.8.2') 
+		if ($version == '0.8.0' OR $version == '0.8.1' OR $version == '0.8.2')
 		{
 			show_error('Updating beyond this point requires a newer version of BambooInvoice.  Please contact Derek Allard if you want some guidance migrating your data.');
 		}
@@ -319,7 +318,7 @@ class Install extends Controller {
 		{
 			$field = array(
 							'new_version_autocheck' => array(
-																'type' => 'CHAR', 
+																'type' => 'CHAR',
 																'default' => 'n'
 															)
 						);
@@ -520,7 +519,7 @@ class Install extends Controller {
 	/**
 	  * This function is here to help me clean up the demo from time to time.  I STRONGLY recommend you don't use
 	  * it, as it WILL wipe out all your data and recovery will not be possible.  Don't do it man... DON'T DO IT!
-	  */ 
+	  */
 /*
 	function baleeted()
 	{
@@ -533,7 +532,7 @@ class Install extends Controller {
 			if (strpos($table, 'settings') === FALSE)
 			{
 				$table = str_replace($this->db->dbprefix, '', $table);
-				$this->db->truncate($table); 
+				$this->db->truncate($table);
 			}
 		}
 
