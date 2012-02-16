@@ -2530,12 +2530,16 @@ class  Cpdf {
           // note that pdf supports only binary format type 1 font files, though there is a
           // simple utility to convert them from pfa to pfb.
           $tmp =  get_magic_quotes_runtime();
-
-          set_magic_quotes_runtime(0);
+          
+          // Check if magic_quotes_runtime is active
+         if ( get_magic_quotes_runtime() )
+             set_magic_quotes_runtime(0);
 
           $data =  file_get_contents($fbfile);
 
-          set_magic_quotes_runtime($tmp);
+          // Check if magic_quotes_runtime is active
+         if ( get_magic_quotes_runtime() )
+             set_magic_quotes_runtime($tmp);
 
 
           // create the font descriptor
@@ -4329,7 +4333,9 @@ class  Cpdf {
 
     $tmp =  get_magic_quotes_runtime();
 
-    set_magic_quotes_runtime(0);
+    // Check if magic_quotes_runtime is active
+    if ( get_magic_quotes_runtime() )
+        set_magic_quotes_runtime(0);
 
     if  ( ($data =  file_get_contents($file)) ===  false) {
 
@@ -4345,7 +4351,9 @@ class  Cpdf {
       $errormsg =  'trouble opening file: '.$file;
     }
 
-    set_magic_quotes_runtime($tmp);
+    // Check if magic_quotes_runtime is active
+    if ( get_magic_quotes_runtime() )
+        set_magic_quotes_runtime($tmp);
 
 
     if  (!$error) {
@@ -4667,14 +4675,20 @@ class  Cpdf {
 
     //$fp = fopen($img,'rb');
 
-    $tmp =  get_magic_quotes_runtime();
+    // Check if magic_quotes_runtime is active
+    if ( get_magic_quotes_runtime() )
+        $tmp =  get_magic_quotes_runtime();
 
-    set_magic_quotes_runtime(0);
+    // Check if magic_quotes_runtime is active
+    if ( get_magic_quotes_runtime() )
+        set_magic_quotes_runtime(0);
 
     $data =  file_get_contents($img);
 
     //fread($fp,filesize($img));
-    set_magic_quotes_runtime($tmp);
+    // Check if magic_quotes_runtime is active
+    if ( get_magic_quotes_runtime() )
+        set_magic_quotes_runtime($tmp);
 
 
     //fclose($fp);
@@ -4740,7 +4754,9 @@ class  Cpdf {
 
     $tmp =  get_magic_quotes_runtime();
 
-    set_magic_quotes_runtime(0);
+    // Check if magic_quotes_runtime is active
+    if ( get_magic_quotes_runtime() )
+        set_magic_quotes_runtime(0);
 
     if  ( ($data =  file_get_contents($tmpName)) ===  false) {
 
@@ -4757,7 +4773,9 @@ class  Cpdf {
     }
 
     //  $data = fread($fp,filesize($tmpName));
-    set_magic_quotes_runtime($tmp);
+    // Check if magic_quotes_runtime is active
+    if ( get_magic_quotes_runtime() )
+        set_magic_quotes_runtime($tmp);
 
     //  fclose($fp);
     unlink($tmpName);
