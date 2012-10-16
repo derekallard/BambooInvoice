@@ -732,7 +732,7 @@ class Invoices extends MY_Controller {
 		$data['date_invoice_due'] = formatted_invoice_date($data['row']->dateIssued, $this->settings_model->get_setting('days_payment_due'));
 
 		$data['companyInfo'] = $this->settings_model->getCompanyInfo()->row();
-		$data['company_logo'] = $this->_get_logo('_pdf', 'pdf');
+		$data['company_logo'] = $this->_get_logo();
 
 		$data['items'] = $this->invoices_model->getInvoiceItems($id);
 
