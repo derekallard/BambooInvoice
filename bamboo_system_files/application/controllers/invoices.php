@@ -671,7 +671,7 @@ class Invoices extends MY_Controller {
 
 		$email_body = $this->input->post('email_body');
 
-		$this->email->from($data['companyInfo']->primary_contact_email, $data['companyInfo']->primary_contact);
+		$this->email->from($data['companyInfo']->primary_contact_email, $data['companyInfo']->primary_contact_email);
 		$this->email->subject($this->lang->line('invoice_invoice')." $invoice_number : ".$data['companyInfo']->company_name);
 		$this->email->message(stripslashes($email_body));
 		$this->email->attach("./invoices_temp/".$invoice_localized."_"."$invoice_number.pdf");
