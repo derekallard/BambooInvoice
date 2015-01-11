@@ -304,7 +304,7 @@ class  Cpdf {
       case  'FitR':
 
         $tmp =   ' '.$options['p3'].$tmp;
-
+	      break;
       case  'FitH':
 
       case  'FitV':
@@ -314,7 +314,7 @@ class  Cpdf {
       case  'FitBV':
 
         $tmp =   ' '.$options['p1'].' '.$options['p2'].$tmp;
-
+	      break;
       case  'Fit':
 
       case  'FitB':
@@ -1487,7 +1487,7 @@ class  Cpdf {
 
         $o['info'][$k] = $v;
       }
-
+	    break;
     case  'out':
 
       $tmp = $o['c'];
@@ -3475,7 +3475,7 @@ class  Cpdf {
       case  'C':
 
         $noClose =  1;
-
+	      break;
       case  'c':
 
         // this this might be a callback function
@@ -4166,7 +4166,7 @@ class  Cpdf {
         // then this object is to be added to this page (done in the next block) and
         // all future new pages.
         $this->addLooseObjects[$id] =  'all';
-
+	      break;
       case  'add':
 
         if  (isset($this->objects[$this->currentContents]['onPage'])) {

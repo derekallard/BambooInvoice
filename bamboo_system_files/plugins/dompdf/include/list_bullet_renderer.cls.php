@@ -77,6 +77,7 @@ class List_Bullet_Renderer extends Abstract_Renderer {
       default:
       case "disc":
         $fill = true;
+	      break;
         
       case "circle":
         if ( !$fill )
