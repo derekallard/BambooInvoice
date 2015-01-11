@@ -139,15 +139,7 @@ h6 {
 	margin: 2.33em 0;
 }
 
-listing {
-	display: block;
-	font-family: fixed, serif;
-	font-size: medium;
-	white-space: pre;
-	margin: 1em 0;
-}
-
-plaintext, xmp, pre {
+pre {
 	display: block;
 	font-family: fixed, serif;
 	white-space: pre;
@@ -254,10 +246,6 @@ s, strike, del {
 	text-decoration: line-through;
 }
 
-blink {
-	text-decoration: blink;
-}
-
 big {
 	font-size: larger;
 }
@@ -354,10 +342,6 @@ noframes {
 
 br {
 	display: -dompdf-br;
-}
-
-img_inner {
-	display: -dompdf-image;
 }
 
 /* hidden elements */
