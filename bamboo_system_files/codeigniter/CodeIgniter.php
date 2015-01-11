@@ -216,7 +216,7 @@ else
 	 * ------------------------------------------------------
 	 */
 	$EXT->_call_hook('post_controller_constructor');
-	
+
 	// Is there a "remap" function?
 	if (method_exists($CI, '_remap'))
 	{
