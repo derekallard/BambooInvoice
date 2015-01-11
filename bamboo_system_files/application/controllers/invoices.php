@@ -580,7 +580,7 @@ class Invoices extends MY_Controller {
 
 		// configure email to be sent
 		$data['companyInfo'] = $this->settings_model->getCompanyInfo()->row();
-		$data['company_logo'] = $this->_get_logo('_pdf', 'pdf');
+		$data['company_logo'] = $this->_get_logo();
 
 		$data['row'] = $this->invoices_model->getSingleInvoice($id)->row();
 
