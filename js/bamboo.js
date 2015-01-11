@@ -4,6 +4,9 @@ function checkMail(email) {
 	else {return false;}
 }
 
+/**
+ * @return {boolean}
+ */
 function IsNumeric(fieldInfo) {
 	var allowChars = "0123456789.";
 	var IsNumeric=true;
