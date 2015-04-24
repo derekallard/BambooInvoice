@@ -19,12 +19,6 @@ class Accounts extends MY_Controller {
 		$data['page_title'] = $this->lang->line('menu_accounts');
 		$data['message'] = $message;
 
-		$this->form_validation->set_rules('username', 'lang:login_username', 'required');
-		$this->form_validation->set_rules('first_name', 'lang:login_password', 'required');
-		$this->form_validation->set_rules('last_name', 'lang:login_password', 'required');
-		$this->form_validation->set_rules('login_password', 'lang:login_password', 'required');
-		$this->form_validation->set_rules('login_password_confirm', 'lang:login_password_confirm', 'required');
-
 		$client_contact_validation = array(
 			array(
 				'field'   => 'username',
@@ -62,14 +56,14 @@ class Accounts extends MY_Controller {
 		else
 		{
 			$client_id = $this->clientcontacts_model->addClientContact(
-																		0, 
-																		$this->input->post('first_name'), 
-																		$this->input->post('last_name'), 
-																		$this->input->post('username'), 
-																		$this->input->post('phone'),
-																		$this->input->post('title'),
-																		1 // turn on login access
-																	);
+				0, 
+				$this->input->post('first_name'), 
+				$this->input->post('last_name'), 
+				$this->input->post('username'), 
+				$this->input->post('phone'),
+				$this->input->post('title'),
+				1 // turn on login access
+			);
 
 			// normally clients don't get passwords, so we need to manually set it now
 			$this->clientcontacts_model->password_change($client_id, $this->input->post('login_password'));
