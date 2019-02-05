@@ -12,7 +12,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 |	http://www.your-site.com/
 |
 */
-$config['base_url']	= getenv( 'BASE_URL' );;
+$config['base_url']	= getenv('BASE_URL');
 // This should be a full address, with a slash.  For example, here's what
 // I use on bambooinvoice.org:
 //$config['base_url']	= 'http://bambooinvoice.org/';
