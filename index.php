@@ -4,18 +4,38 @@ if ( floor( phpversion() ) < 5 ) {
 	die( 'BambooInvoice requires PHP version 5 or higher.  After you have satisfied this, you can try re-installing.' );
 }
 
+define('ENVIRONMENT', 'development');
 /*
 |---------------------------------------------------------------
 | PHP ERROR REPORTING LEVEL
 |---------------------------------------------------------------
-|
-| By default CI runs with error reporting set to ALL.  For security
-| reasons you are encouraged to change this when your site goes live.
-| For more info visit:  http://www.php.net/error_reporting
-|
 */
-//	error_reporting(0);
-error_reporting( E_ALL );
+if (defined('ENVIRONMENT'))
+{
+    switch (ENVIRONMENT)
+    {
+        case 'development':
+            // Report all errors
+            error_reporting(E_ALL);
+
+            // Display errors in output
+            ini_set('display_errors', 1);
+        break;
+
+        case 'testing':
+        case 'production':
+            // Report all errors except E_NOTICE
+            // This is the default value set in php.ini
+            error_reporting(E_ALL ^ E_NOTICE);
+
+            // Don't display errors (they can still be logged)
+            ini_set('display_errors', 0);
+        break;
+
+        default:
+            exit('The application environment is not set correctly.');
+    }
+}
 
 /*
 |---------------------------------------------------------------
@@ -117,4 +137,3 @@ if ( ! defined( 'E_STRICT' ) ) {
 |
 */
 require_once BASEPATH . 'codeigniter/CodeIgniter' . EXT;
-?>
