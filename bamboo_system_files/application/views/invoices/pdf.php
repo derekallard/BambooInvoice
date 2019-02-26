@@ -44,7 +44,7 @@ li, blockquote, p, th, td {
 	font-size: 80%;
 }
 ul {
-	list-style: url(img/bullet.gif) none;
+	list-style: url('img/bullet.gif') none;
 }
 table {
 	width: 100%;

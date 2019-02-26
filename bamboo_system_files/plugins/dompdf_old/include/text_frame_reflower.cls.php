@@ -306,6 +306,7 @@ class Text_Frame_Reflower extends Frame_Reflower {
     default:
     case "normal":
       $str = preg_replace("/[\s\n]+/u"," ", $str);
+	    break;
     case "pre-wrap":
     case "pre-line":
 
@@ -346,7 +347,7 @@ class Text_Frame_Reflower extends Frame_Reflower {
 
     case "pre-line":
       $str = preg_replace( "/[ \t]+/u", " ", $text);
-
+	    break;
     case "pre-wrap":
       // Find the longest word (i.e. minimum length)
       $lines = array_flip(preg_split("/\n/", $text));

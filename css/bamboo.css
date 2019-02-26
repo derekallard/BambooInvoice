@@ -81,9 +81,6 @@ li, blockquote, p, th, td, legend {
 }
 body {
 	margin: 0px;
-
-	background: url(../img/menu_side.png) repeat-y;
-
 	font-family: Helvetica, Arial, Verdana, sans-serif; /*Trebuchet MS,*/
 }
 ul {
@@ -116,10 +113,8 @@ input {
 }
 
 #container {
-	background: url(../img/menu_bottom.png) no-repeat left bottom;
 }
 #masthead {
-	background: url(../img/village_back.png) no-repeat right top;
 	height: 109px;
 }
 #bamboo_logo {
@@ -130,7 +125,6 @@ input {
 	padding: 0;
 	float: left;
 	color: #FFF;
-	background: url(../img/bamboo_logo.png) no-repeat left top;
 }
 #bamboo_logo a {
 	display: block;
@@ -183,7 +177,6 @@ input {
 	width: 200px;
 	margin-top: -38px;
 	padding:32px 0;
-	background: url(../img/menu_top.png) no-repeat left top;
 	float: left;
 }
 #invoice_action_menu p {
@@ -297,7 +290,6 @@ input {
 	background: #F6F6F6; /*#E8EEF6;*/
 }
 #tip {
-	background: url(../img/quote_bottom.png) no-repeat center bottom;
 	clear: left;
 	padding: 5px;
 }

@@ -210,7 +210,7 @@ class Install extends Controller {
 									'primary_contact_email'	=> array('type' => 'VARCHAR', 'constraint' => 50),
 									'logo' 					=> array('type' => 'VARCHAR', 'constraint' => 50),
 									'logo_pdf' 				=> array('type' => 'VARCHAR', 'constraint' => 50),
-									'invoice_note_default' 	=> array('type' => 'VARCHAR', 'constraint' => 255),
+									'invoice_note_default' 	=> array('type' => 'TEXT'),
 									'currency_type' 		=> array('type' => 'VARCHAR', 'constraint' => 20),
 									'currency_symbol'		=> array('type' => 'VARCHAR', 'constraint' => 9, 'default' => '$'),
 									'tax_code' 				=> array('type' => 'VARCHAR', 'constraint' => 50),

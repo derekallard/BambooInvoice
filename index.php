@@ -1,23 +1,41 @@
 <?php
 
-if (floor(phpversion()) < 5)
-{
-	die('BambooInvoice requires PHP version 5 or higher.  After you have satisfied this, you can try re-installing.');
+if ( floor( phpversion() ) < 5 ) {
+	die( 'BambooInvoice requires PHP version 5 or higher.  After you have satisfied this, you can try re-installing.' );
 }
 
-
+define('ENVIRONMENT', 'development');
 /*
 |---------------------------------------------------------------
 | PHP ERROR REPORTING LEVEL
 |---------------------------------------------------------------
-|
-| By default CI runs with error reporting set to ALL.  For security
-| reasons you are encouraged to change this when your site goes live.
-| For more info visit:  http://www.php.net/error_reporting
-|
 */
-//	error_reporting(0);
-	error_reporting(E_ALL);
+if (defined('ENVIRONMENT'))
+{
+    switch (ENVIRONMENT)
+    {
+        case 'development':
+            // Report all errors
+            error_reporting(E_ALL);
+
+            // Display errors in output
+            ini_set('display_errors', 1);
+        break;
+
+        case 'testing':
+        case 'production':
+            // Report all errors except E_NOTICE
+            // This is the default value set in php.ini
+            error_reporting(E_ALL ^ E_NOTICE);
+
+            // Don't display errors (they can still be logged)
+            ini_set('display_errors', 0);
+        break;
+
+        default:
+            exit('The application environment is not set correctly.');
+    }
+}
 
 /*
 |---------------------------------------------------------------
@@ -31,8 +49,7 @@ if (floor(phpversion()) < 5)
 | NO TRAILING SLASH!
 |
 */
-	$system_folder = "bamboo_system_files";
-
+$system_folder = "bamboo_system_files";
 
 /*
 |---------------------------------------------------------------
@@ -49,15 +66,13 @@ if (floor(phpversion()) < 5)
 | NO TRAILING SLASH!
 |
 */
-	$application_folder = "application";
-
+$application_folder = "application";
 
 /*
 |===============================================================
 | END OF USER CONFIGURABLE SETTINGS
 |===============================================================
 */
-
 
 /*
 |---------------------------------------------------------------
@@ -68,9 +83,8 @@ if (floor(phpversion()) < 5)
 | folder in order to reduce the possibility of path problems.
 |
 */
-if (function_exists('realpath') AND @realpath(dirname(__FILE__)) !== FALSE)
-{
-	$system_folder = str_replace("\\", "/", realpath(dirname(__FILE__))).'/'.$system_folder;
+if ( function_exists( 'realpath' ) AND @realpath( dirname( __FILE__ ) ) !== FALSE ) {
+	$system_folder = str_replace( "\\", "/", realpath( dirname( __FILE__ ) ) ) . '/' . $system_folder;
 }
 
 /*
@@ -85,23 +99,19 @@ if (function_exists('realpath') AND @realpath(dirname(__FILE__)) !== FALSE)
 | APPPATH	- The full server path to the "application" folder
 |
 */
-define('EXT', '.'.pathinfo(__FILE__, PATHINFO_EXTENSION));
-define('FCPATH', __FILE__);
-define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
-define('BASEPATH', $system_folder.'/');
+define( 'EXT', '.' . pathinfo( __FILE__, PATHINFO_EXTENSION ) );
+define( 'FCPATH', __FILE__ );
+define( 'SELF', pathinfo( __FILE__, PATHINFO_BASENAME ) );
+define( 'BASEPATH', $system_folder . '/' );
 
-if (is_dir($application_folder))
-{
-	define('APPPATH', $application_folder.'/');
-}
-else
-{
-	if ($application_folder == '')
-	{
+if ( is_dir( $application_folder ) ) {
+	define( 'APPPATH', $application_folder . '/' );
+} else {
+	if ( $application_folder == '' ) {
 		$application_folder = 'application';
 	}
 
-	define('APPPATH', BASEPATH.$application_folder.'/');
+	define( 'APPPATH', BASEPATH . $application_folder . '/' );
 }
 
 /*
@@ -114,9 +124,8 @@ else
 | will generate errors.
 |
 */
-if ( ! defined('E_STRICT'))
-{
-	define('E_STRICT', 2048);
+if ( ! defined( 'E_STRICT' ) ) {
+	define( 'E_STRICT', 2048 );
 }
 
 /*
@@ -127,5 +136,4 @@ if ( ! defined('E_STRICT'))
 | And away we go...
 |
 */
-require_once BASEPATH.'codeigniter/CodeIgniter'.EXT;
-?>
+require_once BASEPATH . 'codeigniter/CodeIgniter' . EXT;
