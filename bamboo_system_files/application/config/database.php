@@ -47,4 +47,16 @@ $db['default']['cachedir'] = '';
 $db['default']['char_set'] = 'utf8';
 $db['default']['dbcollat'] = 'utf8_general_ci';
 
+/*
+|--------------------------------------------------------------------------
+| Local Configuration
+|--------------------------------------------------------------------------
+|
+| Load a local file configuration if exists.
+|
+*/
+if (file_exists(dirname(__FILE__) . '/database.local.php')) {
+        include(dirname(__FILE__) . '/database.local.php');
+}
+
 ?>

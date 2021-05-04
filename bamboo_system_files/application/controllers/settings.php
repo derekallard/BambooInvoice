@@ -57,6 +57,7 @@ class Settings extends MY_Controller {
 							'invoice_note_default' => $this->input->post('invoice_note_default'),
 							'currency_type' => $this->input->post('currency_type'),
 							'currency_symbol' => $this->input->post('currency_symbol'),
+							'currency_symbol_after' => $this->input->post('currency_symbol_after'),
 							'days_payment_due' => (int) $this->input->post('days_payment_due'),
 							'tax_code' => $this->input->post('tax_code'),
 							'tax1_desc' => $this->input->post('tax1_desc'),
@@ -146,6 +147,7 @@ class Settings extends MY_Controller {
 		$rules['invoice_note_default'] = "trim|prep_for_form|max_length[2000]";
 		$rules['currency_type'] 	= "trim|prep_for_form|max_length[20]";
 		$rules['currency_symbol'] 	= "ltrim|max_length[9]";
+		$rules['currency_symbol_after'] = "trim|alpha|max_length[1]";
 		$rules['days_payment_due'] 	= "trim|prep_for_form|numeric|max_length[3]";
 		$rules['tax_code'] 			= "trim|prep_for_form|max_length[50]";
 		$rules['tax1_desc'] 		= "trim|prep_for_form|max_length[50]";
@@ -174,6 +176,7 @@ class Settings extends MY_Controller {
 		$fields['invoice_note_default'] = $this->lang->line('settings_default_note');
 		$fields['currency_type'] 	= $this->lang->line('settings_currency type');
 		$fields['currency_symbol'] 	= $this->lang->line('settings_currency symbol');
+		$fields['currency_symbol_after'] = $this->lang->line('settings_currency_symbol_after');
 		$fields['days_payment_due']	= $this->lang->line('settings_payment_days');
 		$fields['tax_code'] 		= $this->lang->line('settings_tax_code');
 		$fields['tax1_desc'] 		= $this->lang->line('invoice_tax1_description');

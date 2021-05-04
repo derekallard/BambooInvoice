@@ -5,7 +5,7 @@ class Reports extends MY_Controller {
 	function Reports()
 	{
 		parent::MY_Controller();
-		$this->load->helper(array('date', 'text'));
+		$this->load->helper(array('date', 'text', 'misc'));
 		$this->load->library('pagination');
 		$this->load->library('table');
 		$this->load->model('invoices_model');
@@ -103,10 +103,10 @@ class Reports extends MY_Controller {
 
 		$current_year_data = $this->reports_model->getSummaryData($data['current_year'].'-01-01', $data['current_year'].'-12-31');
 
-		$data['yearToDateAmount'] = $this->settings_model->get_setting('currency_symbol') . number_format($current_year_data->amount, 2, $this->config->item('currency_decimal'), '');
+		$data['yearToDateAmount'] = formatNumber($current_year_data->amount, TRUE);
 		if ($current_year_data->tax1_collected > 0)
 		{
-			$data['yearToDateTax1'] = $this->settings_model->get_setting('currency_symbol') . number_format($current_year_data->tax1_collected, 2, $this->config->item('currency_decimal'), '');
+			$data['yearToDateTax1'] = formatNumber($current_year_data->tax1_collected, TRUE);
 		}
 		else
 		{
@@ -115,7 +115,7 @@ class Reports extends MY_Controller {
 
 		if ($current_year_data->tax2_collected > 0)
 		{
-			$data['yearToDateTax2'] = $this->settings_model->get_setting('currency_symbol') . number_format($current_year_data->tax2_collected, 2, $this->config->item('currency_decimal'), '');
+			$data['yearToDateTax2'] = formatNumber($current_year_data->tax2_collected, TRUE);
 		}
 		else
 		{
@@ -144,7 +144,7 @@ class Reports extends MY_Controller {
 		$date_error = (date("Y", $start_date_timestamp) == '1969' OR date("Y", $end_date_timestamp) == '1969') ? TRUE : FALSE;
 
 		// sanity checks
-		$data['report_dates'] = 'Report for ' . date("Y-m-d", $start_date_timestamp) . ' to ' . date("Y-m-d", $end_date_timestamp);
+		$data['report_dates'] = 'Report for ' . date($this->config->item('invoice_date_format'), $start_date_timestamp) . ' to ' . date($this->config->item('invoice_date_format'), $end_date_timestamp);
 
 		$detailed_data = $this->reports_model->getDetailedData($start_date, $end_date);
 		$detailed_data_summary = $this->reports_model->getSummaryData($start_date, $end_date);
@@ -170,10 +170,10 @@ class Reports extends MY_Controller {
 
 				foreach ($detailed_data->result() as $details)
 				{
-					$this->table->add_row($details->name, $this->settings_model->get_setting('currency_symbol') . number_format($details->amount, 2, $this->config->item('currency_decimal'), ''), $this->settings_model->get_setting('currency_symbol') . number_format($details->tax1_collected, 2, $this->config->item('currency_decimal'), ''));
+					$this->table->add_row($details->name, formatNumber($details->amount, TRUE), formatNumber($details->tax1_collected, TRUE));
 				}
 
-				$this->table->add_row('<strong>Total</strong>', '<strong>' . $this->settings_model->get_setting('currency_symbol') . number_format($detailed_data_summary->amount, 2, $this->config->item('currency_decimal'), ''), '<strong>' . $this->settings_model->get_setting('currency_symbol') . number_format($detailed_data_summary->tax1_collected, 2, $this->config->item('currency_decimal'), '') . '</strong>');
+				$this->table->add_row('<strong>Total</strong>', '<strong>' . formatNumber($detailed_data_summary->amount, TRUE), '<strong>' . formatNumber($detailed_data_summary->tax1_collected, TRUE) . '</strong>');
 			}
 			else
 			{
@@ -181,10 +181,10 @@ class Reports extends MY_Controller {
 
 				foreach ($detailed_data->result() as $details)
 				{
-					$this->table->add_row($details->name, $this->settings_model->get_setting('currency_symbol') . number_format($details->amount, 2, $this->config->item('currency_decimal'), ''), $this->settings_model->get_setting('currency_symbol') . number_format($details->tax1_collected, 2, $this->config->item('currency_decimal'), ''), $this->settings_model->get_setting('currency_symbol') . number_format($details->tax2_collected, 2, $this->config->item('currency_decimal'), ''));
+					$this->table->add_row($details->name, formatNumber($details->amount, TRUE), formatNumber($details->tax1_collected, TRUE), formatNumber($details->tax2_collected, TRUE));
 				}
 
-				$this->table->add_row('<strong>'.$this->lang->line('invoice_total').'</strong>', '<strong>' . $this->settings_model->get_setting('currency_symbol') . number_format($detailed_data_summary->amount, 2, $this->config->item('currency_decimal'), ''), '<strong>' . $this->settings_model->get_setting('currency_symbol') . number_format($detailed_data_summary->tax1_collected, 2, $this->config->item('currency_decimal'), '') . '</strong>', '<strong>' . $this->settings_model->get_setting('currency_symbol') . number_format($detailed_data_summary->tax2_collected, 2, $this->config->item('currency_decimal'), '') . '</strong>');
+				$this->table->add_row('<strong>'.$this->lang->line('invoice_total').'</strong>', '<strong>' . formatNumber($detailed_data_summary->amount, TRUE), '<strong>' . formatNumber($detailed_data_summary->tax1_collected, TRUE) . '</strong>', '<strong>' . formatNumber($detailed_data_summary->tax2_collected, TRUE) . '</strong>');
 			}
 
 			$data['data_table'] = $this->table->generate();

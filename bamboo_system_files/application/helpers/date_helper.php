@@ -28,12 +28,16 @@ function formatted_invoice_date($date = '', $days_from_now = 0)
 		// 1 January 2009
 		$formatted_date = date('j ', $date) . $CI->lang->line('cal_' . strtolower(date('F', $date))) . date(' Y', $date);
 	}
-	else
+	elseif ($CI->config->item('invoice_date_format') == 'default')
 	{
 		// Januray 1, 2009
 		$formatted_date = $CI->lang->line('cal_' . strtolower(date('F', $date))) . date(' j, Y', $date);
 	}
-
+	else
+	{
+		// PHP date string format.
+		$formatted_date = date($CI->config->item('invoice_date_format'), $date);
+	}
 
 	return $formatted_date;
 }

@@ -1,4 +1,4 @@
-<?php  
+<?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
@@ -161,7 +161,7 @@ $config['function_trigger'] = 'm';
 | Error Logging Threshold
 |--------------------------------------------------------------------------
 |
-| If you have enabled error logging, you can set an error threshold to 
+| If you have enabled error logging, you can set an error threshold to
 | determine what gets logged. Threshold options are:
 | You can enable error logging by setting a threshold over zero. The
 | threshold determines what gets logged. Threshold options are:
@@ -329,11 +329,21 @@ $config['rewrite_short_tags'] = FALSE;
 // numbers to be controlled by the individual client, rather then globally
 $config['unique_invoice_per_client'] = FALSE;
 
+// Invoice number format.
+// 'number' - Number only.
+// 'year_number' - '2010/1'
+// default (not defined) - Number only.
+//$config['invoice_number_format'] = 'year_number';
+
 // setting 'currency_decimal' will use this character instead of a '.' to separate
 // the cents.  For example: $24.67 vs $24,67 vs $24_67... or whatever
 $config['currency_decimal'] = '.';
 
-// setting 'show_profiler' to TRUE will cause profiler information to automatically 
+// setting 'currency_thousands' will use this character as thousands separator.
+// For example: $10,000.00
+$config['currency_thousands'] = ',';
+
+// setting 'show_profiler' to TRUE will cause profiler information to automatically
 // load on the bottom of every page (except the installer)
 $config['show_profiler'] = FALSE;
 
@@ -357,7 +367,21 @@ $config['short_description_characters'] = 50;
 // this controls how dates display throughout BambooInvoice
 // 'day_month_year' gives 1 January 2009
 // 'default' gives January 1, 2009
+// or PHP date format string. Ex.: 'd-m-Y' gives 01-01-2009
 $config['invoice_date_format'] = 'default';
+
+
+/*
+|--------------------------------------------------------------------------
+| Local Configuration
+|--------------------------------------------------------------------------
+|
+| Load a local file configuration if exists.
+|
+*/
+if (file_exists(dirname(__FILE__) . '/config.local.php')) {
+        include(dirname(__FILE__) . '/config.local.php');
+}
 
 /* End of file config.php */
 /* Location: ./system/application/config/config.php */

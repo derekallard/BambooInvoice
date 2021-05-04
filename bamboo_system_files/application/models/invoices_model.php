@@ -91,18 +91,17 @@ class invoices_model extends Model {
 
 	function getSingleInvoice($invoice_id)
 	{
-		$this->db->select('invoices.*, clients.name, clients.address1, clients.address2, clients.city, clients.country, clients.province, clients.website, clients.postal_code, clients.tax_code');
-		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_payments').'.amount_paid) FROM '.$this->db->dbprefix('invoice_payments').' WHERE '.$this->db->dbprefix('invoice_payments').'.invoice_id=' . $invoice_id . ') AS amount_paid', FALSE); 
+		$this->db->select('invoices.*');
+		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_payments').'.amount_paid) FROM '.$this->db->dbprefix('invoice_payments').' WHERE '.$this->db->dbprefix('invoice_payments').'.invoice_id=' . $invoice_id . ') AS amount_paid', FALSE);
 		$this->db->select('TO_DAYS('.$this->db->dbprefix('invoices').'.dateIssued) - TO_DAYS(curdate()) AS daysOverdue', FALSE);
 		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id=' . $invoice_id . ') AS total_notax', FALSE);
 		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity * ('.$this->db->dbprefix('invoices').'.tax1_rate/100 * '.$this->db->dbprefix('invoice_items').'.taxable)) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id=' . $invoice_id . ') AS total_tax1', FALSE);
 		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity * ('.$this->db->dbprefix('invoices').'.tax2_rate/100 * '.$this->db->dbprefix('invoice_items').'.taxable)) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id=' . $invoice_id . ') AS total_tax2', FALSE);
 		$this->db->select('(SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity + ROUND(('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity * ('.$this->db->dbprefix('invoices').'.tax1_rate/100 + '.$this->db->dbprefix('invoices').'.tax2_rate/100) * '.$this->db->dbprefix('invoice_items').'.taxable), 2)) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id=' . $invoice_id . ') AS total_with_tax', FALSE);
 
-		$this->db->join('clients', 'invoices.client_id = clients.id');
 		$this->db->join('invoice_items', 'invoices.id = invoice_items.invoice_id', 'left');
 		$this->db->join('invoice_payments', 'invoices.id = invoice_payments.invoice_id', 'left');
-		$this->db->groupby('invoices.id'); 
+		$this->db->groupby('invoices.id');
 		$this->db->where('invoices.id', $invoice_id);
 
 		return $this->db->get('invoices');
@@ -118,7 +117,7 @@ class invoices_model extends Model {
 
 		$this->db->select('invoice_id, work_description', FALSE);
 		$this->db->group_by('invoice_id');
-		
+
 		foreach($this->db->get('invoice_items')->result() as $short_desc)
 		{
 			$short_descriptions[$short_desc->invoice_id] = ($limit == 0) ? '' : '['.character_limiter($short_desc->work_description, $limit).']';
@@ -211,24 +210,23 @@ class invoices_model extends Model {
 		}
 		elseif ($status == 'open')
 		{
-			$this->db->having("(ROUND(amount_paid, 2) < ROUND(subtotal, 2) or amount_paid is null)", '', FALSE);
+			$this->db->having("(ROUND(amount_paid, 2) != ROUND(subtotal, 2) or amount_paid is null)", '', FALSE);
 		}
 		elseif ($status == 'closed')
 		{
-			$this->db->having('ROUND(amount_paid, 2) >= ROUND(subtotal, 2)', '', FALSE);
+			$this->db->having('ROUND(amount_paid, 2) = ROUND(subtotal, 2)', '', FALSE);
 		}
 
-		$this->db->select('invoices.*, clients.name');
-		$this->db->select('(SELECT SUM(amount_paid) FROM '.$this->db->dbprefix('invoice_payments').' WHERE invoice_id='.$this->db->dbprefix('invoices').'.id) AS amount_paid', FALSE); 
+		$this->db->select('invoices.*');
+		$this->db->select('(SELECT SUM(amount_paid) FROM '.$this->db->dbprefix('invoice_payments').' WHERE invoice_id='.$this->db->dbprefix('invoices').'.id) AS amount_paid', FALSE);
 		$this->db->select('TO_DAYS('.$this->db->dbprefix('invoices').'.dateIssued) - TO_DAYS(curdate()) AS daysOverdue', FALSE);
 		$this->db->select('ROUND((SELECT SUM('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity + ('.$this->db->dbprefix('invoice_items').'.amount * '.$this->db->dbprefix('invoice_items').'.quantity * ('.$this->db->dbprefix('invoices').'.tax1_rate/100 + '.$this->db->dbprefix('invoices').'.tax2_rate/100) * '.$this->db->dbprefix('invoice_items').'.taxable)) FROM '.$this->db->dbprefix('invoice_items').' WHERE '.$this->db->dbprefix('invoice_items').'.invoice_id='.$this->db->dbprefix('invoices').'.id), 2) AS subtotal', FALSE);
 
-		$this->db->join('clients', 'invoices.client_id = clients.id');
 		$this->db->join('invoice_items', 'invoices.id = invoice_items.invoice_id', 'left');
 		$this->db->join('invoice_payments', 'invoices.id = invoice_payments.invoice_id', 'left');
 
 		$this->db->order_by('dateIssued desc, invoice_number desc');
-		$this->db->groupby('invoices.id'); 
+		$this->db->groupby('invoices.id');
 		$this->db->offset($offset);
 		$this->db->limit($limit);
 
@@ -245,7 +243,7 @@ class invoices_model extends Model {
 		}
 
 		$this->db->where('invoice_number != ""');
-		$this->db->orderby("id", "desc"); 
+		$this->db->orderby("id", "desc");
 		$this->db->limit(1);
 
 		$query = $this->db->get('invoices');
@@ -258,6 +256,42 @@ class invoices_model extends Model {
 		{
 			return '0';
 		}
+	}
+
+	function figureNextInvoiceNumber($client_id)
+	{
+		$last = $this->lastInvoiceNumber($client_id);
+
+		switch ($this->config->item('invoice_number_format')) {
+			case 'year_number':
+				$today = getdate();
+				if ($last == '0') {
+					$year = $today['year'];
+					$number = 1;
+				} else {
+					$year = intval(substr($last, 0, 4));
+					$number = intval(substr($last, 5));
+
+					if ($today['year'] > $year) {
+						$year = $today['year'];
+						$number = 1;
+					} else {
+						$number++;
+					}
+				}
+				$newNumber = sprintf('%d/%d', $year, $number);
+				break;
+
+			case 'number':
+			default:
+				if (is_numeric($last)) {
+					$newNumber = strval($last++);
+				} else {
+					$newNumber = $last;
+				}
+		}
+
+		return $newNumber;
 	}
 
 	// --------------------------------------------------------------------

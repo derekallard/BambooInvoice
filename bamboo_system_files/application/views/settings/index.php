@@ -218,6 +218,21 @@ $this->load->view('header');
 					</p>
 
 					<p>
+						<label for="currency_symbol_after"><span><?php echo $this->lang->line('settings_currency_symbol_after');?></span></label>
+						<input class="requiredfield" name="currency_symbol_after" type="checkbox" id="currency_symbol_after"  value="y" <?php
+						if ($this->validation->set_checkbox('currency_symbol_after', 'y'))
+						{
+							echo $this->validation->set_checkbox('currency_symbol_after', 'y');
+						}
+						elseif ($this->settings_model->get_setting('currency_symbol_after') == 'y')
+						{
+							echo 'checked="checked"';
+						}
+						?> />
+						<?php echo $this->validation->currency_symbol_after_error; ?>
+					</p>
+
+					<p>
 						<label for="days_payment_due"><span><?php echo $this->lang->line('settings_days_payment_due');?></span></label>
 						<input class="requiredfield" name="days_payment_due" type="text" id="days_payment_due" size="20" value="<?php echo ($this->validation->days_payment_due) ? ($this->validation->days_payment_due) : ($row->days_payment_due);?>" />
 						(ie: 30) <?php echo $this->validation->days_payment_due_error; ?>
